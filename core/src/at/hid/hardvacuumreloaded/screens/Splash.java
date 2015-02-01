@@ -1,14 +1,20 @@
 package at.hid.hardvacuumreloaded.screens;
 
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.objects.TextureMapObject;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.sun.javafx.iio.ImageMetadata;
 
 public class Splash implements Screen {
 	private SpriteBatch batch;
@@ -39,6 +45,9 @@ public class Splash implements Screen {
 		HardVacuumReloaded.debug(this.getClass().toString(), "creating Splash screen");
 
 		HardVacuumReloaded.assets.load("ui/gui.json", Skin.class);
+//		HardVacuumReloaded.assets.load("sprites/miner.png", TextureMapObject.class);
+		HardVacuumReloaded.assets.setLoader(TiledMap.class, new TmxMapLoader(new InternalFileHandleResolver()));
+		HardVacuumReloaded.assets.load("maps/tut1.tmx", TiledMap.class);
 
 		batch = new SpriteBatch();
 

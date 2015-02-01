@@ -1,11 +1,20 @@
 package at.hid.hardvacuumreloaded.screens;
 
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.entities.Miner;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -21,12 +30,39 @@ public class GameScreen implements Screen {
 	private Stage stage;
 	private Table table;
 	private Skin skin;
+	private OrthogonalTiledMapRenderer renderer;
+	private OrthographicCamera camera;
+	private Miner miner;
+	private Sprite selected1;
 
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		
+		
+		renderer.setView(camera);
+		renderer.render();
+		
+		renderer.getBatch().begin();
+		miner.draw(renderer.getBatch());
+		renderer.getBatch().end();
 
+		renderer.getBatch().begin();
+		selected1.draw(renderer.getBatch());
+		renderer.getBatch().end();
+		
+		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+			float x = Gdx.input.getX();
+			float y = 1000 - Gdx.input.getY();
+			
+			if ((miner.getX() - 60 < x) && (x < miner.getX() + 60) && (miner.getY() - 60 < y) && (y < miner.getY() + 60)) {
+				selected1.setAlpha(1);
+			} else {
+				selected1.setAlpha(0);
+			}
+		}
+		
 		stage.act(delta);
 		stage.draw();
 	}
@@ -34,13 +70,16 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		stage.getViewport().update(width, height, true);
+		camera.viewportHeight = height;
+		camera.viewportWidth = width;
+		camera.update();
 		table.invalidateHierarchy();
 		table.setFillParent(true);
 	}
 	
 	@Override
 	public void show() {
-		HardVacuumReloaded.debug(this.getClass().toString(), "creating Ifc1 screen");
+		HardVacuumReloaded.debug(this.getClass().toString(), "creating GameScreen screen");
 		stage = new Stage(new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
 
 		Gdx.input.setInputProcessor(stage);
@@ -55,6 +94,7 @@ public class GameScreen implements Screen {
 
 		Label lblHeading = new Label("", skin, "heading.ifc1");
 		lblHeading.setBounds(0, 800, 1200, 200);
+		lblHeading.setVisible(false);
 
 		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("GameScreen.lblHeadingText.text"), skin, "heading.text");
 		lblHeadingText.setBounds(20, 815, 1155, 175);
@@ -71,6 +111,28 @@ public class GameScreen implements Screen {
 		
 		ScrollPane spContent = new ScrollPane(null, skin);
 		spContent.setBounds(0, 0, 1200, 800);
+		
+		TiledMap map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
+		float unitScale = 5f;
+		renderer = new OrthogonalTiledMapRenderer(map, unitScale);
+		camera = new OrthographicCamera();
+		
+		miner = new Miner(new Sprite(new Texture("sprites/miner1.png")), (TiledMapTileLayer) map.getLayers().get("collision"));
+
+		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
+		float y = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("y");
+		
+		miner.setScale(5);
+		miner.setCenterX((x * 5) + 50);
+		miner.setCenterY((y * 5) + 50);
+		selected1 = new Sprite(new Texture("sprites/selected1.png"));
+		selected1.setScale(5);
+		selected1.setCenterX((x * 5) + 50);
+		selected1.setCenterY((y * 5) + 100);
+		selected1.setAlpha(0);
+		
+		camera.position.set(800, 500, 0);
+		renderer.setView(camera);
 
 		ImageButton ibtnMenuGrab = new ImageButton(skin, "menu.grab");
 		ibtnMenuGrab.setBounds(1235, 195, 115, 90);
@@ -103,7 +165,7 @@ public class GameScreen implements Screen {
 		ibtnMenuStats.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("Ifc1");
+				HardVacuumReloaded.playerProfile.setOldScreen("GameScreen");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Stats());
 			}
 		});
@@ -139,7 +201,7 @@ public class GameScreen implements Screen {
 		ibtnMenuBuy.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("Ifc1");
+				HardVacuumReloaded.playerProfile.setOldScreen("GameScreen");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 			}
 		});
@@ -149,28 +211,27 @@ public class GameScreen implements Screen {
 		ibtnMenuHelp.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("Ifc1");
+				HardVacuumReloaded.playerProfile.setOldScreen("GameScreen");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Help());
 			}
 		});
 		
 		ImageButton ibtnMenuDisc = new ImageButton(skin, "menu.disc");
 		ibtnMenuDisc.setBounds(1350, 15, 115, 90);
-		ibtnMenuDisc.setDisabled(true);
-//		ibtnMenuDisc.addListener(new ClickListener() {
-//			@Override
-//			public void clicked(InputEvent event, float x, float y) {
-//				HardVacuumReloaded.playerProfile.setOldScreen("Ifc1");
-//				((Game) Gdx.app.getApplicationListener()).setScreen(new Disc());
-//			}
-//		});
+		ibtnMenuDisc.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				HardVacuumReloaded.playerProfile.setOldScreen("GameScreen");
+				((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
+			}
+		});
 
 		ImageButton ibtnMenuOptions = new ImageButton(skin, "menu.options");
 		ibtnMenuOptions.setBounds(1465, 15, 115, 90);
 		ibtnMenuOptions.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("Ifc1");
+				HardVacuumReloaded.playerProfile.setOldScreen("GameScreen");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Options());
 			}
 		});
@@ -226,7 +287,7 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void dispose() {
-		HardVacuumReloaded.debug(this.getClass().toString(), "cleaning up Ifc1 screen");
+		HardVacuumReloaded.debug(this.getClass().toString(), "cleaning up GameScreen screen");
 		stage.dispose();
 	}
 

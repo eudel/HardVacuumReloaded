@@ -304,7 +304,7 @@
  </layer>
  <objectgroup name="event">
   <object name="miner" type="spawn" x="40" y="40" width="20" height="20"/>
-  <object name="miner" type="target" x="100" y="120" width="40" height="20"/>
+  <object name="mine" type="target" x="100" y="120" width="40" height="20"/>
  </objectgroup>
  <objectgroup name="enemy"/>
 </map>
