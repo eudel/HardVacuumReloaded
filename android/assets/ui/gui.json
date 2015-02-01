@@ -1,0 +1,617 @@
+{
+	"com.badlogic.gdx.graphics.Color": {
+		"white": {
+			"r": 1,
+			"g": 1,
+			"b": 1,
+			"a": 1
+		},
+		"black": {
+			"r": 0,
+			"g": 0,
+			"b": 0,
+			"a": 1
+		},
+		"red": {
+			"r": 1,
+			"g": 0,
+			"b": 0,
+			"a": 1
+		},
+		"green": {
+			"r": 0,
+			"g": 1,
+			"b": 0,
+			"a": 1
+		},
+		"blue": {
+			"r": 0,
+			"g": 0,
+			"b": 1,
+			"a": 1
+		}
+	},
+	"com.badlogic.gdx.graphics.g2d.BitmapFont": {
+		"white64": {
+			"file": "font/white64.fnt"
+		},
+		"black64": {
+			"file": "font/black64.fnt"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
+		"default": {
+			"font": "white64",
+			"fontColor": "white"
+		},
+		"heading.text": {
+			"font": "white64",
+			"fontColor": "white"
+		},
+		"heading.buy": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.buy"
+		},
+		"map.buy": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.buy"
+		},
+		"content.buy": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.buy"
+		},
+		"menu.buy": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.buy"
+		},
+		"heading.mission": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.mission"
+		},
+		"map.mission": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.mission"
+		},
+		"content.mission": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.mission"
+		},
+		"menu.mission": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.mission"
+		},
+		"heading.options": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.options"
+		},
+		"map.options": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.options"
+		},
+		"content.options": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.options"
+		},
+		"menu.options": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.options"
+		},
+		"content.help": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.help"
+		},
+		"heading.stats": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.stats"
+		},
+		"map.stats": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.stats"
+		},
+		"content.stats": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.stats"
+		},
+		"menu.stats": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.stats"
+		},
+		"heading.ifc1": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc1"
+		},
+		"map.ifc1": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc1"
+		},
+		"menu.ifc1": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc1"
+		},
+		"heading.ifc2": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc2"
+		},
+		"map.ifc2": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc2"
+		},
+		"menu.ifc2": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc2"
+		},
+		"heading.ifc3": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc3"
+		},
+		"map.ifc3": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc3"
+		},
+		"menu.ifc3": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc3"
+		},
+		"heading.ifc4": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc4"
+		},
+		"map.ifc4": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc4"
+		},
+		"menu.ifc4": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc4"
+		},
+		"lblBig.up": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblBig.up"
+		},
+		"lblBig.down": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblBig.down"
+		},
+		"lblSmall.up": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblSmall.up"
+		},
+		"lblSmall.down": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblSmall.down"
+		},
+		"lblClass": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblClass"
+		},
+		"lblEmployer": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblEmployer"
+		},
+		"lblObjective": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblObjective"
+		},
+		"lblPayment": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblPayment"
+		},
+		"field1.red": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field1.red"
+		},
+		"field2.red": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.red"
+		},
+		"field3.red": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field3.red"
+		},
+		"field4.red": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.red"
+		},
+		"field1.black": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field1.black"
+		},
+		"field2.black": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.black"
+		},
+		"field3.black": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field3.black"
+		},
+		"field4.black": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.black"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+		"default": {
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle": {
+		"aircraft": {
+			"up": "aircraft.up",
+			"down": "aircraft.down",
+			"over": "aircraft.up",
+			"disabled": "aircraft.down"
+		},
+		"boat": {
+			"up": "boat.up",
+			"down": "boat.down",
+			"over": "boat.up",
+			"disabled": "boat.down"
+		},
+		"cancel": {
+			"up": "cancel.up",
+			"down": "cancel.down",
+			"over": "cancel.up",
+			"disabled": "cancel.down"
+		},
+		"category.misc": {
+			"up": "category.misc.up",
+			"down": "category.misc.down",
+			"over": "category.misc.up",
+			"disabled": "category.misc.down"
+		},
+		"category.structures": {
+			"up": "category.structures.up",
+			"down": "category.structures.down",
+			"over": "category.structures.up",
+			"disabled": "category.structures.down"
+		},
+		"category.vehicles": {
+			"up": "category.vehicles.up",
+			"down": "category.vehicles.down",
+			"over": "category.vehicles.up",
+			"disabled": "category.vehicles.down"
+		},
+		"control": {
+			"up": "control.up",
+			"down": "control.down",
+			"over": "control.up",
+			"disabled": "control.down"
+		},
+		"delete": {
+			"up": "delete.up",
+			"down": "delete.down",
+			"over": "delete.up",
+			"disabled": "delete.down"
+		},
+		"details": {
+			"up": "details.up",
+			"down": "details.down",
+			"over": "details.up",
+			"disabled": "details.down"
+		},
+		"diplomacy": {
+			"up": "diplomacy.up",
+			"down": "diplomacy.down",
+			"over": "diplomacy.up",
+			"disabled": "diplomacy.down"
+		},
+		"enterMission": {
+			"up": "enterMission.up",
+			"down": "enterMission.down",
+			"over": "enterMission.up",
+			"disabled": "enterMission.down"
+		},
+		"exit": {
+			"up": "exit.up",
+			"down": "exit.down",
+			"over": "exit.up",
+			"disabled": "exit.down"
+		},
+		"kill": {
+			"up": "kill.up",
+			"down": "kill.down",
+			"over": "kill.up",
+			"disabled": "kill.down"
+		},
+		"load": {
+			"up": "load.up",
+			"down": "load.down",
+			"over": "load.up",
+			"disabled": "load.down"
+		},
+		"menu.airstrike": {
+			"up": "menu.airstrike.up",
+			"down": "menu.airstrike.down",
+			"over": "menu.airstrike.up",
+			"disabled": "menu.airstrike.down"
+		},
+		"menu.buy": {
+			"up": "menu.buy.up",
+			"down": "menu.buy.down",
+			"over": "menu.buy.up",
+			"disabled": "menu.buy.down"
+		},
+		"menu.disc": {
+			"up": "menu.disc.up",
+			"down": "menu.disc.down",
+			"over": "menu.disc.up",
+			"disabled": "menu.disc.down"
+		},
+		"menu.grab": {
+			"up": "menu.grab.up",
+			"down": "menu.grab.down",
+			"over": "menu.grab.up",
+			"disabled": "menu.grab.down"
+		},
+		"menu.help": {
+			"up": "menu.help.up",
+			"down": "menu.help.down",
+			"over": "menu.help.up",
+			"disabled": "menu.help.down"
+		},
+		"menu.info": {
+			"up": "menu.info.up",
+			"down": "menu.info.down",
+			"over": "menu.info.up",
+			"disabled": "menu.info.down"
+		},
+		"menu.map": {
+			"up": "menu.map.up",
+			"down": "menu.map.down",
+			"over": "menu.map.up",
+			"disabled": "menu.map.down"
+		},
+		"menu.options": {
+			"up": "menu.options.up",
+			"down": "menu.options.down",
+			"over": "menu.options.up",
+			"disabled": "menu.options.down"
+		},
+		"menu.selectGroup": {
+			"up": "menu.selectGroup.up",
+			"down": "menu.selectGroup.down",
+			"over": "menu.selectGroup.up",
+			"disabled": "menu.selectGroup.down"
+		},
+		"menu.stats": {
+			"up": "menu.stats.up",
+			"down": "menu.stats.down",
+			"over": "menu.stats.up",
+			"disabled": "menu.stats.down"
+		},
+		"minus": {
+			"up": "minus.up",
+			"down": "minus.down",
+			"over": "minus.up",
+			"disabled": "minus.down"
+		},
+		"music": {
+			"up": "music.up",
+			"down": "music.down",
+			"over": "music.up",
+			"disabled": "music.down"
+		},
+		"okay": {
+			"up": "okay.up",
+			"down": "okay.down",
+			"over": "okay.up",
+			"disabled": "okay.down"
+		},
+		"plus": {
+			"up": "plus.up",
+			"down": "plus.down",
+			"over": "plus.up",
+			"disabled": "plus.down"
+		},
+		"save": {
+			"up": "save.up",
+			"down": "save.down",
+			"over": "save.up",
+			"disabled": "save.down"
+		},
+		"select.both": {
+			"up": "select.both.up",
+			"down": "select.both.down",
+			"over": "select.both.up",
+			"disabled": "select.both.down"
+		},
+		"select.empty": {
+			"up": "select.empty",
+			"down": "select.empty",
+			"over": "select.empty",
+			"disabled": "select.empty"
+		},
+		"select.left": {
+			"up": "select.left.up",
+			"down": "select.left.down",
+			"over": "select.left.up",
+			"disabled": "select.left.down"
+		},
+		"select.right": {
+			"up": "select.right.up",
+			"down": "select.right.down",
+			"over": "select.right.up",
+			"disabled": "select.right.down"
+		},
+		"sound": {
+			"up": "sound.up",
+			"down": "sound.down",
+			"over": "sound.up",
+			"disabled": "sound.down"
+		},
+		"structures": {
+			"up": "structures.up",
+			"down": "structures.down",
+			"over": "structures.up",
+			"disabled": "structures.down"
+		},
+		"tank": {
+			"up": "tank.up",
+			"down": "tank.down",
+			"over": "tank.up",
+			"disabled": "tank.down"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle": {
+		"default": {
+			"hScrollKnob": "radio.on",
+			"vScrollKnob": "radio.on"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle": {
+		"default": {
+			"font": "white64",
+			"fontColorSelected": "white",
+			"fontColorUnselected": "white",
+			"selection": "default.selection"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
+    	"dialogSmall": {
+    		"background": "dialogSmall",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"dialogBig": {
+    		"stageBackground": "dialogBig",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field1": {
+    		"background": "field1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field1.red1": {
+    		"background": "field1.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field1.red2": {
+    		"background": "field1.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field1.red12": {
+    		"background": "field1.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field2": {
+    		"background": "field2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field2.red1": {
+    		"background": "field2.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field2.red2": {
+    		"background": "field2.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field2.red12": {
+    		"background": "field2.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field3": {
+    		"background": "field3",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field3.red1": {
+    		"background": "field3.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field3.red2": {
+    		"background": "field3.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field3.red12": {
+    		"background": "field3.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field4": {
+    		"background": "field4",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field4.red1": {
+    		"background": "field4.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field4.red2": {
+    		"background": "field4.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+    	"field4.red12": {
+    		"background": "field4.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	}
+    },
+    "com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle": {
+		"default-horizontal": {
+			"background": "panel.up",
+			"knobBefore": "progressbar.knobBefore"
+		}
+	},
+	"com.badlogic.gdx.scenes.scene2d.ui.Slider$SliderStyle": {
+		"volume": {
+			"background": "panel.up",
+			"knobBefore": "progressbar.knobBefore"
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"0": {
+		"id": "tut.1.0",
+		"employer": "Nashi",
+		"class": "Ressource collection",
+		"payment": 1000,
+		"objective1": "Collect 1000",
+		"objective2": "ressource units"
+	},
+	"1": {
+		"id": "tut.1.1",
+		"employer": "HID",
+		"class": "Ressource collection",
+		"payment": 1000,
+		"objective1": "Collect 1000",
+		"objective2": "ressource units"
+	},
+	"2": {
+		"id": "tut.1.2",
+		"employer": "Shinra",
+		"class": "Ressource collection",
+		"payment": 1000,
+		"objective1": "Collect 1000",
+		"objective2": "ressource units"
+	},
+	"3": {
+		"id": "tut.1.2",
+		"employer": "Nakatomi",
+		"class": "Ressource collection",
+		"payment": 1000,
+		"objective1": "Collect 1000",
+		"objective2": "ressource units"
+	}
+}
