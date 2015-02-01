@@ -20,10 +20,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
-public class MainMenu implements Screen {
+public class MissionMenu implements Screen {
 
 	private Stage stage;
 	private Skin skin;
@@ -63,8 +64,9 @@ public class MainMenu implements Screen {
 		Label lblHeading = new Label("", skin, "heading.mission");
 		lblHeading.setBounds(0, 805, 1205, 195);
 
-		Label lblHeadingText = new Label("", skin, "heading.text");
+		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("MissionMenu.lblHeadingText.text"), skin, "heading.text");
 		lblHeadingText.setBounds(30, 815, 1155, 175);
+		lblHeadingText.setAlignment(Align.center);
 
 		Label lblMap = new Label("", skin, "map.mission");
 		lblMap.setBounds(1205, 675, 395, 325);
@@ -140,7 +142,7 @@ public class MainMenu implements Screen {
 				public void clicked(InputEvent event, float x, float y) {
 					HardVacuumReloaded.playerProfile.setOldScreen("MainMenu");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
-//					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc2());
+					//					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc2());
 				}
 			});
 		}
@@ -173,7 +175,10 @@ public class MainMenu implements Screen {
 			ibtnEnterMission.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
-
+					if (listMissions.getSelectedIndex() != -1) {
+						HardVacuumReloaded.playerProfile.setOnMission(true);
+						((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+					}
 				}
 			});
 		}

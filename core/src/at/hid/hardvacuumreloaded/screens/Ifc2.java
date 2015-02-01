@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
@@ -55,8 +56,9 @@ public class Ifc2 implements Screen {
 		Label lblHeading = new Label("", skin, "heading.ifc2");
 		lblHeading.setBounds(0, 800, 1200, 200);
 
-		Label lblHeadingText = new Label("", skin, "heading.text");
+		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("Ifc2.lblHeadingText.text"), skin, "heading.text");
 		lblHeadingText.setBounds(20, 815, 1155, 175);
+		lblHeadingText.setAlignment(Align.center);
 
 		Label lblMap = new Label("", skin, "map.ifc2");
 		lblMap.setBounds(1200, 650, 400, 350);

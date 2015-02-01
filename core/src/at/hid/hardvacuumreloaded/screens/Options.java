@@ -90,7 +90,7 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				if (HardVacuumReloaded.playerProfile.getOldScreen().equals("MainMenu")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
-					((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+					((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Stats")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Stats());
@@ -114,9 +114,9 @@ public class Options implements Screen {
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc4());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("")) {
 					if (!HardVacuumReloaded.playerProfile.isOnMission()) {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 					} else {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
 					}
 				}
 			}

@@ -48,7 +48,7 @@ public class Splash implements Screen {
 
 		HardVacuumReloaded.assets.finishLoading();
 		HardVacuumReloaded.debug(this.getClass().toString(), "switching to MainMenu Screen");
-		((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+		((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 	}
 
 	@Override

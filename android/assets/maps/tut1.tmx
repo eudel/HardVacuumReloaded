@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="20" tileheight="20">
+ <tileset firstgid="1" name="collision" tilewidth="20" tileheight="20">
+  <image source="ortho_HardVacuumReloaded_collision.png" width="60" height="40"/>
+ </tileset>
+ <tileset firstgid="7" name="rules" tilewidth="20" tileheight="20">
+  <image source="ortho_HardVacuumReloaded_rules.png" width="200" height="200"/>
+ </tileset>
+ <tileset firstgid="107" name="crtr-crtrPit" tilewidth="20" tileheight="20">
+  <image source="crtr-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="122" name="crtr-lavaPit" tilewidth="20" tileheight="20">
+  <image source="crtr-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="137" name="crtr-road" tilewidth="20" tileheight="20">
+  <image source="crtr-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="152" name="crtr-watrPit" tilewidth="20" tileheight="20">
+  <image source="crtr-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="167" name="grs-cliffPit" tilewidth="20" tileheight="20">
+  <image source="grs-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="182" name="grs-crtr" tilewidth="20" tileheight="20">
+  <image source="grs-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="197" name="grs-crtrPit" tilewidth="20" tileheight="20">
+  <image source="grs-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="212" name="grs-grsHill" tilewidth="20" tileheight="20">
+  <image source="grs-grsHill.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="227" name="grs-grsPit" tilewidth="20" tileheight="20">
+  <image source="grs-grsPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="242" name="grs-lavaPit" tilewidth="20" tileheight="20">
+  <image source="grs-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="257" name="grs-road" tilewidth="20" tileheight="20">
+  <image source="grs-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="272" name="grs-swmpPit" tilewidth="20" tileheight="20">
+  <image source="grs-swmpPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="287" name="grs-tree" tilewidth="20" tileheight="20">
+  <image source="grs-tree.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="302" name="grs-watrPit" tilewidth="20" tileheight="20">
+  <image source="grs-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="317" name="ice-brk1Pit" tilewidth="20" tileheight="20">
+  <image source="ice-brk1Pit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="332" name="ice-brk2Pit" tilewidth="20" tileheight="20">
+  <image source="ice-brk2Pit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="347" name="ice-road" tilewidth="20" tileheight="20">
+  <image source="ice-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="362" name="ice-watrPit" tilewidth="20" tileheight="20">
+  <image source="ice-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="377" name="lavaBubble" tilewidth="20" tileheight="40">
+  <image source="lavaBubble.png" width="180" height="80"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+    <frame tileid="12" duration="100"/>
+    <frame tileid="13" duration="100"/>
+    <frame tileid="14" duration="100"/>
+    <frame tileid="15" duration="100"/>
+    <frame tileid="16" duration="100"/>
+    <frame tileid="17" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="395" name="lava-road" tilewidth="20" tileheight="20">
+  <image source="lava-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="410" name="mntn-cliffPit" tilewidth="20" tileheight="20">
+  <image source="mntn-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="425" name="mntn-crtr" tilewidth="20" tileheight="20">
+  <image source="mntn-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="440" name="mntn-crtrPit" tilewidth="20" tileheight="20">
+  <image source="mntn-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="455" name="mntn-grs" tilewidth="20" tileheight="20">
+  <image source="mntn-grs.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="470" name="mntn-lavaPit" tilewidth="20" tileheight="20">
+  <image source="mntn-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="485" name="mntn-mntnHill" tilewidth="20" tileheight="20">
+  <image source="mntn-mntnHill.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="500" name="mntn-road" tilewidth="20" tileheight="20">
+  <image source="mntn-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="515" name="mntn-sand" tilewidth="20" tileheight="20">
+  <image source="mntn-sand.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="530" name="mntn-snow" tilewidth="20" tileheight="20">
+  <image source="mntn-snow.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="545" name="mntn-watrPit" tilewidth="20" tileheight="20">
+  <image source="mntn-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="560" name="open-deep" tilewidth="20" tileheight="20">
+  <image source="open-deep.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="575" name="sand-cliffPit" tilewidth="20" tileheight="20">
+  <image source="sand-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="590" name="sand-crtr" tilewidth="20" tileheight="20">
+  <image source="sand-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="605" name="sand-crtrPit" tilewidth="20" tileheight="20">
+  <image source="sand-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="620" name="sand-lavaPit" tilewidth="20" tileheight="20">
+  <image source="sand-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="635" name="sand-road" tilewidth="20" tileheight="20">
+  <image source="sand-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="650" name="sand-sandHill" tilewidth="20" tileheight="20">
+  <image source="sand-sandHill.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="665" name="sand-watrPit" tilewidth="20" tileheight="20">
+  <image source="sand-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="680" name="snow-cliffPit" tilewidth="20" tileheight="20">
+  <image source="snow-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="695" name="snow-crtr" tilewidth="20" tileheight="20">
+  <image source="snow-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="710" name="snow-crtrPit" tilewidth="20" tileheight="20">
+  <image source="snow-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="725" name="snow-ice" tilewidth="20" tileheight="20">
+  <image source="snow-ice.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="740" name="snow-lavaPit" tilewidth="20" tileheight="20">
+  <image source="snow-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="755" name="snowPit-cliffPit" tilewidth="20" tileheight="20">
+  <image source="snowPit-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="770" name="snowPit-crtr" tilewidth="20" tileheight="20">
+  <image source="snowPit-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="785" name="snowPit-crtrPit" tilewidth="20" tileheight="20">
+  <image source="snowPit-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="800" name="snowPit-lavaPit" tilewidth="20" tileheight="20">
+  <image source="snowPit-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="815" name="snowPit-road" tilewidth="20" tileheight="20">
+  <image source="snowPit-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="830" name="snowPit-watrPit" tilewidth="20" tileheight="20">
+  <image source="snowPit-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="845" name="snow-road" tilewidth="20" tileheight="20">
+  <image source="snow-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="860" name="snow-snowHill" tilewidth="20" tileheight="20">
+  <image source="snow-snowHill.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="875" name="snow-snowPit" tilewidth="20" tileheight="20">
+  <image source="snow-snowPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="890" name="snow-sntr" tilewidth="20" tileheight="20">
+  <image source="snow-sntr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="905" name="snow-stnHill" tilewidth="20" tileheight="20">
+  <image source="snow-stnHill.png" width="120" height="120"/>
+ </tileset>
+ <tileset firstgid="941" name="snow-watrPit" tilewidth="20" tileheight="20">
+  <image source="snow-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="956" name="stn-cliffPit" tilewidth="20" tileheight="20">
+  <image source="stn-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="971" name="stn-crtr" tilewidth="20" tileheight="20">
+  <image source="stn-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="986" name="stn-crtrPit" tilewidth="20" tileheight="20">
+  <image source="stn-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1001" name="stn-lavaPit" tilewidth="20" tileheight="20">
+  <image source="stn-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1016" name="stn-road" tilewidth="20" tileheight="20">
+  <image source="stn-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1031" name="stn-snow" tilewidth="20" tileheight="20">
+  <image source="stn-snow.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1046" name="stn-stnHill" tilewidth="20" tileheight="20">
+  <image source="stn-stnHill.png" width="120" height="120"/>
+ </tileset>
+ <tileset firstgid="1082" name="stn-watrPit" tilewidth="20" tileheight="20">
+  <image source="stn-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1097" name="swmpAnim" tilewidth="20" tileheight="20">
+  <image source="swmpAnim.png" width="100" height="20"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="1" duration="400"/>
+    <frame tileid="2" duration="400"/>
+    <frame tileid="3" duration="400"/>
+    <frame tileid="4" duration="400"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="1102" name="swmpBubble" tilewidth="20" tileheight="40">
+  <image source="swmpBubble.png" width="220" height="80"/>
+  <tile id="0">
+   <animation>
+    <frame tileid="1" duration="300"/>
+    <frame tileid="2" duration="300"/>
+    <frame tileid="3" duration="300"/>
+    <frame tileid="4" duration="300"/>
+    <frame tileid="5" duration="300"/>
+    <frame tileid="6" duration="300"/>
+    <frame tileid="7" duration="300"/>
+    <frame tileid="8" duration="300"/>
+    <frame tileid="9" duration="300"/>
+    <frame tileid="10" duration="300"/>
+    <frame tileid="11" duration="300"/>
+    <frame tileid="12" duration="200"/>
+    <frame tileid="13" duration="200"/>
+    <frame tileid="14" duration="200"/>
+    <frame tileid="15" duration="200"/>
+    <frame tileid="16" duration="300"/>
+    <frame tileid="17" duration="300"/>
+    <frame tileid="18" duration="300"/>
+    <frame tileid="19" duration="300"/>
+    <frame tileid="20" duration="300"/>
+    <frame tileid="21" duration="300"/>
+   </animation>
+  </tile>
+ </tileset>
+ <tileset firstgid="1124" name="swmp-road" tilewidth="20" tileheight="20">
+  <image source="swmp-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1139" name="tech-cliffPit" tilewidth="20" tileheight="20">
+  <image source="tech-cliffPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1154" name="tech-crtr" tilewidth="20" tileheight="20">
+  <image source="tech-crtr.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1169" name="tech-crtrPit" tilewidth="20" tileheight="20">
+  <image source="tech-crtrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1184" name="tech-lavaPit" tilewidth="20" tileheight="20">
+  <image source="tech-lavaPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1199" name="tech-road" tilewidth="20" tileheight="20">
+  <image source="tech-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1214" name="tech-watrPit" tilewidth="20" tileheight="20">
+  <image source="tech-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1229" name="watr-open" tilewidth="20" tileheight="20">
+  <image source="watr-open.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1244" name="watr-road" tilewidth="20" tileheight="20">
+  <image source="watr-road.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1259" name="watr-watrHill" tilewidth="20" tileheight="20">
+  <image source="watr-watrHill.png" width="60" height="100"/>
+ </tileset>
+ <tileset firstgid="1274" name="watr-watrPit" tilewidth="20" tileheight="20">
+  <image source="watr-watrPit.png" width="60" height="100"/>
+ </tileset>
+ <layer name="ground" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJydzjkKgEAQRNG+/0lERBTFXU/hrofxBxUO02DwgqJ/0LWZ5Y4KGVZs2HEGpOoO7cvpbjx4nS5087oGrXSRrscgY6SbMMvy478SiaPABw8TTME=
+  </data>
+ </layer>
+ <layer name="object" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgwkAAAGQAAE=
+  </data>
+ </layer>
+ <layer name="collision" width="10" height="10" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgYCYSEwKj6vCrIwYDAFbIAG0=
+  </data>
+ </layer>
+ <objectgroup name="event">
+  <object name="miner" type="spawn" x="40" y="40" width="20" height="20"/>
+  <object name="miner" type="target" x="100" y="120" width="40" height="20"/>
+ </objectgroup>
+ <objectgroup name="enemy"/>
+</map>

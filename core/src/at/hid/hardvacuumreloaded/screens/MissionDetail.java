@@ -17,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
@@ -77,8 +78,9 @@ public class MissionDetail implements Screen {
 		Label lblHeading = new Label("", skin, "heading.mission");
 		lblHeading.setBounds(0, 805, 1205, 195);
 
-		Label lblHeadingText = new Label("", skin, "heading.text");
+		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("MissionDetail.lblHeadingText.text"), skin, "heading.text");
 		lblHeadingText.setBounds(30, 815, 1155, 175);
+		lblHeadingText.setAlignment(Align.center);
 
 		Label lblMap = new Label("", skin, "map.mission");
 		lblMap.setBounds(1205, 675, 395, 325);
@@ -101,12 +103,12 @@ public class MissionDetail implements Screen {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				if (HardVacuumReloaded.playerProfile.getOldScreen().equals("MainMenu")) {
-					((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+					((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("")) {
 					if (!HardVacuumReloaded.playerProfile.isOnMission()) {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 					} else {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
 					}
 				}
 			}

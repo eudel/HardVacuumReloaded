@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
@@ -56,8 +57,9 @@ public class Stats implements Screen {
 		Label lblHeading = new Label("", skin, "heading.stats");
 		lblHeading.setBounds(0, 665, 1200, 335);
 
-		Label lblHeadingText = new Label("", skin, "heading.text");
+		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("Stats.lblHeadingText.text"), skin, "heading.text");
 		lblHeadingText.setBounds(20, 815, 1155, 175);
+		lblHeadingText.setAlignment(Align.center);
 
 		Label lblMap = new Label("", skin, "map.stats");
 		lblMap.setBounds(1200, 665, 400, 335);
@@ -84,7 +86,7 @@ public class Stats implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				if (HardVacuumReloaded.playerProfile.getOldScreen().equals("MainMenu")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
-					((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+					((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Options")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Options());
@@ -108,9 +110,9 @@ public class Stats implements Screen {
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("")) {
 					if (!HardVacuumReloaded.playerProfile.isOnMission()) {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 					} else {
-						((Game) Gdx.app.getApplicationListener()).setScreen(new MainMenu());
+						((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
 					}
 				}
 			}
