@@ -109,6 +109,7 @@ public class MissionMenu implements Screen {
 		ibtnExit.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				if (!HardVacuumReloaded.playerProfile.isOnMission()) {
 				DialogSmall dialogExit = new DialogSmall(skin) {
 					@Override
 					public void result() {
@@ -117,6 +118,9 @@ public class MissionMenu implements Screen {
 				};
 				dialogExit.text("Are you sure?");
 				dialogExit.show(stage);
+				} else {
+					((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+				}
 			}
 		});
 

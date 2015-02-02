@@ -1,6 +1,9 @@
 package at.hid.hardvacuumreloaded.screens;
 
+import java.util.ArrayList;
+
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.PlayerProfile;
 import at.hid.hardvacuumreloaded.entities.Miner;
 
 import com.badlogic.gdx.Game;
@@ -32,6 +35,7 @@ public class GameScreen implements Screen {
 	private Skin skin;
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
+	private ArrayList<Object> entities = new ArrayList<Object>();
 	private Miner miner;
 	private Sprite selected1;
 
@@ -56,11 +60,21 @@ public class GameScreen implements Screen {
 			float x = Gdx.input.getX();
 			float y = 1000 - Gdx.input.getY();
 			
-			if ((miner.getX() - 60 < x) && (x < miner.getX() + 60) && (miner.getY() - 60 < y) && (y < miner.getY() + 60)) {
+			if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
+				HardVacuumReloaded.playerProfile.setUnitSelected(true);
+				miner.setSelected(true);
 				selected1.setAlpha(1);
 			} else {
+				HardVacuumReloaded.playerProfile.setUnitSelected(false);
+				miner.setSelected(false);
 				selected1.setAlpha(0);
 			}
+		} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
+			float x = Gdx.input.getX();
+			float y = 1000 - Gdx.input.getY();
+			
+			miner.setCenter(x, y);
+			selected1.setCenter(x, y + 50);
 		}
 		
 		stage.act(delta);
@@ -118,17 +132,18 @@ public class GameScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		miner = new Miner(new Sprite(new Texture("sprites/miner1.png")), (TiledMapTileLayer) map.getLayers().get("collision"));
+		entities.add(miner);
 
 		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
 		float y = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("y");
 		
 		miner.setScale(5);
-		miner.setCenterX((x * 5) + 50);
-		miner.setCenterY((y * 5) + 50);
+		miner.setX((x * 5) + 40);
+		miner.setY((y * 5) + 40);
 		selected1 = new Sprite(new Texture("sprites/selected1.png"));
 		selected1.setScale(5);
-		selected1.setCenterX((x * 5) + 50);
-		selected1.setCenterY((y * 5) + 100);
+		selected1.setX((x * 5) + 40);
+		selected1.setY((y * 5) + 90);
 		selected1.setAlpha(0);
 		
 		camera.position.set(800, 500, 0);

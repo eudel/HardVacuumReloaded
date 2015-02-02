@@ -1,7 +1,7 @@
 package at.hid.hardvacuumreloaded;
 
 public class PlayerProfile {
-	private boolean onMission, tut1, tut2, tut3;
+	private boolean onMission, unitSelected, tut1, tut2, tut3;
 	private int credits;
 	private String oldScreen;
 
@@ -43,6 +43,14 @@ public class PlayerProfile {
 	
 	public void setOnMission(boolean onMission) {
 		this.onMission = onMission;
+	}
+
+	public boolean isUnitSelected() {
+		return unitSelected;
+	}
+
+	public void setUnitSelected(boolean unitSelected) {
+		this.unitSelected = unitSelected;
 	}
 
 	public String getOldScreen() {

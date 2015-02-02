@@ -93,6 +93,12 @@ public class Stats implements Screen {
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Help")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Help());
+				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("GameScreen")) {
+					HardVacuumReloaded.playerProfile.setOldScreen("");
+					((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Buy")) {
+					HardVacuumReloaded.playerProfile.setOldScreen("");
+					((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Ifc1")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc1());
@@ -105,9 +111,6 @@ public class Stats implements Screen {
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Ifc4")) {
 					HardVacuumReloaded.playerProfile.setOldScreen("");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc4());
-				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("Buy")) {
-					HardVacuumReloaded.playerProfile.setOldScreen("");
-					((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 				} else if (HardVacuumReloaded.playerProfile.getOldScreen().equals("")) {
 					if (!HardVacuumReloaded.playerProfile.isOnMission()) {
 						((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());

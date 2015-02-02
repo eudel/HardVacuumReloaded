@@ -7,12 +7,21 @@ import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 public class Miner extends Sprite {
 
 	private int tileWidth = 20, tileHeight = 20;
+	private boolean selected;
 
 	private TiledMapTileLayer collisionLayer;
 
 	public Miner(Sprite sprite, TiledMapTileLayer collisionLayer) {
 		super(sprite);
 		this.collisionLayer = collisionLayer;
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 
 	public void draw(SpriteBatch spriteBatch) {
