@@ -13,6 +13,7 @@ public class DesktopLauncher {
 		config.height = 1000;
 		config.x = 0;
 		config.y = 0;
+		config.resizable = false;
 		new LwjglApplication(new HardVacuumReloaded(), config);
 	}
 }
