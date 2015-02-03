@@ -39,8 +39,6 @@ public class Miner extends Sprite {
 		}
 		iconSelected.setX(getX());
 		iconSelected.setY(getY() + 50);
-		System.out.println(targetX);
-		System.out.println((int) getX());
 
 		// move to target if target is set
 		if (targetX != (int) getX()) {
@@ -74,37 +72,97 @@ public class Miner extends Sprite {
 			velocity.y = -speed;
 
 		// save old position
-		float oldX = getX(), oldy = getY();
+		float oldX = getX(), oldY = getY();
 		boolean collisionX = false, collisionY = false;
 
 		// move on x
 		setX(getX() + (velocity.x * delta));
 		if (velocity.x < 0) {
-			// top left
 			try {
-				collisionX = collisionLayer.getCell((int) (getX() / tileWidth), (int) ((getY() + getHeight()) / tileHeight)).getTile().getProperties().containsKey("collision");
+				// top left
+				collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY() / 5) + getHeight()) / tileHeight)).getTile().getProperties().containsKey("collision");
 
 				// middle left
-				collisionX = collisionLayer.getCell((int) (getX() / tileWidth), (int) ((getY() + getHeight() / 2) / tileHeight)).getTile().getProperties().containsKey("collision");
+				if (!collisionX)
+					collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY() / 5) + getHeight() / 2) / tileHeight)).getTile().getProperties().containsKey("collision");
 
 				// bottom left
-				collisionX = collisionLayer.getCell((int) (getX() / tileWidth), (int) ((getY()) / tileHeight)).getTile().getProperties().containsKey("collision");
+				if (!collisionX)
+					collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY()) / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
 			} catch (Exception e) {
 
 			}
-
+			if (collisionX) {
+				setX(oldX);
+				velocity.x = 0;
+			}
 		} else if (velocity.x > 0) {
+			try {
+				// top right
+				collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY() / 5) + getHeight()) / tileHeight)).getTile().getProperties().containsKey("collision");
 
+				// middle right
+				if (!collisionX)
+					collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY() / 5) + getHeight() / 2) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+				// bottom right
+				if (!collisionX)
+					collisionX = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) (((getY()) / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+			} catch (Exception e) {
+
+			}
+			if (collisionX) {
+				setX(oldX);
+				velocity.x = 0;
+			}
 		}
 
 		// move on y
 		setY(getY() + velocity.y * delta);
 		if (velocity.y < 0) {
+			try {
+				// bottom left
+				collisionY = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
 
+				// bottom middle
+				if (!collisionY)
+					collisionY = collisionLayer.getCell((int) (((getX() / 5) + tileWidth / 2) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+				// bottom right
+				if (!collisionY)
+					collisionY = collisionLayer.getCell((int) (((getX() / 5) + tileWidth) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+			} catch (Exception e) {
+
+			}
+			if (collisionY) {
+				setY(oldY);
+				velocity.y = 0;
+			}
 		} else if (velocity.y > 0) {
+			try {
+				// top left
+				collisionY = collisionLayer.getCell((int) ((getX() / 5) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
 
+				// top middle
+				if (!collisionY)
+					collisionY = collisionLayer.getCell((int) (((getX() / 5) + tileWidth / 2) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+				// top right
+				if (!collisionY)
+					collisionY = collisionLayer.getCell((int) (((getX() / 5) + tileWidth) / tileWidth), (int) ((getY() / 5) / tileHeight)).getTile().getProperties().containsKey("collision");
+
+			} catch (Exception e) {
+
+			}
+			if (collisionY) {
+				setY(oldY);
+				velocity.y = 0;
+			}
 		}
-		
+
 		if ((velocity.x == 0) && (velocity.y == 0))
 			target = false;
 
@@ -146,11 +204,11 @@ public class Miner extends Sprite {
 		this.targetY = targetY;
 		target = true;
 	}
-	
+
 	public boolean hasTarget() {
 		return target;
 	}
-	
+
 	public void moveXpos(int steps) {
 		float newX = getX() + (steps * tileWidth);
 		boolean collisionX = false;
