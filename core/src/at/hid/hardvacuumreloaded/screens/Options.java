@@ -191,8 +191,8 @@ public class Options implements Screen {
 			});
 		}
 		final ImageButton ibtnSound = new ImageButton(skin, "sound");
-		;
 		final ImageButton ibtnMusic = new ImageButton(skin, "music");
+		final Slider slideVolume = new Slider(1, 100, 10, false, skin, "volume");
 
 		ImageButton ibtnSave = new ImageButton(skin, "save");
 		ibtnSave.setBounds(15, 660, 160, 140);
@@ -201,6 +201,7 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				ibtnMusic.setDisabled(false);
 				ibtnSound.setDisabled(false);
+				slideVolume.setDisabled(true);
 				lblHeadingText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblHeadingText.ibtnSave.text"));
 				lblContentText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblContentText.ibtnSave.text"));
 			}
@@ -213,6 +214,7 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				ibtnMusic.setDisabled(false);
 				ibtnSound.setDisabled(false);
+				slideVolume.setDisabled(true);
 				lblHeadingText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblHeadingText.ibtnLoad.text"));
 				lblContentText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblContentText.ibtnLoad.text"));
 			}
@@ -225,6 +227,7 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				ibtnMusic.setDisabled(false);
 				ibtnSound.setDisabled(false);
+				slideVolume.setDisabled(true);
 				lblHeadingText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblHeadingText.ibtnDelete.text"));
 				lblContentText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblContentText.ibtnDelete.text"));
 			}
@@ -237,6 +240,7 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				ibtnMusic.setDisabled(false);
 				ibtnSound.setDisabled(false);
+				slideVolume.setDisabled(true);
 				lblHeadingText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblHeadingText.ibtnControl.text"));
 				lblContentText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblContentText.ibtnControl.text"));
 			}
@@ -250,12 +254,12 @@ public class Options implements Screen {
 			public void clicked(InputEvent event, float x, float y) {
 				ibtnMusic.setDisabled(false);
 				ibtnSound.setDisabled(false);
+				slideVolume.setDisabled(true);
 				lblHeadingText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblHeadingText.ibtnKill.text"));
 				lblContentText.setText(HardVacuumReloaded.getLangBundle().format("Options.lblContentText.ibtnKill.text"));
 			}
 		});
 
-		final Slider slideVolume = new Slider(1, 100, 10, false, skin, "volume");
 		slideVolume.setBounds(620, 550, 560, 50);
 		slideVolume.getStyle().knobBefore.setMinHeight(50);
 		slideVolume.setValue(100);
