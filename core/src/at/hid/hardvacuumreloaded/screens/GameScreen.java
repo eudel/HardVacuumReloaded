@@ -3,7 +3,6 @@ package at.hid.hardvacuumreloaded.screens;
 import java.util.ArrayList;
 
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
-import at.hid.hardvacuumreloaded.PlayerProfile;
 import at.hid.hardvacuumreloaded.entities.Miner;
 
 import com.badlogic.gdx.Game;
@@ -17,7 +16,6 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -37,7 +35,7 @@ public class GameScreen implements Screen {
 	private OrthographicCamera camera;
 	private ArrayList<Object> entities = new ArrayList<Object>();
 	private Miner miner;
-	private Sprite selected1;
+	private Sprite iconSelected;
 
 	@Override
 	public void render(float delta) {
@@ -53,8 +51,11 @@ public class GameScreen implements Screen {
 		renderer.getBatch().end();
 
 		renderer.getBatch().begin();
-		selected1.draw(renderer.getBatch());
+		iconSelected.draw(renderer.getBatch());
 		renderer.getBatch().end();
+		
+		if (miner.hasTarget())
+			miner.update(Gdx.graphics.getDeltaTime());
 		
 		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			float x = Gdx.input.getX();
@@ -63,18 +64,20 @@ public class GameScreen implements Screen {
 			if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
 				HardVacuumReloaded.playerProfile.setUnitSelected(true);
 				miner.setSelected(true);
-				selected1.setAlpha(1);
+//				iconSelected.setAlpha(1);
 			} else {
 				HardVacuumReloaded.playerProfile.setUnitSelected(false);
 				miner.setSelected(false);
-				selected1.setAlpha(0);
+//				iconSelected.setAlpha(0);
 			}
 		} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
-			float x = Gdx.input.getX();
-			float y = 1000 - Gdx.input.getY();
+			int x = Gdx.input.getX();
+			int y = 1000 - Gdx.input.getY();
 			
-			miner.setCenter(x, y);
-			selected1.setCenter(x, y + 50);
+			miner.setTarget(x, y);
+
+//			miner.setCenter(x, y);
+//			iconSelected.setCenter(x, y + 50);
 		}
 		
 		stage.act(delta);
@@ -131,7 +134,8 @@ public class GameScreen implements Screen {
 		renderer = new OrthogonalTiledMapRenderer(map, unitScale);
 		camera = new OrthographicCamera();
 		
-		miner = new Miner(new Sprite(new Texture("sprites/miner1.png")), (TiledMapTileLayer) map.getLayers().get("collision"));
+		iconSelected = new Sprite(new Texture("sprites/selected1.png"));
+		miner = new Miner(new Sprite(new Texture("sprites/miner1.png")), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
 		entities.add(miner);
 
 		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
@@ -140,11 +144,10 @@ public class GameScreen implements Screen {
 		miner.setScale(5);
 		miner.setX((x * 5) + 40);
 		miner.setY((y * 5) + 40);
-		selected1 = new Sprite(new Texture("sprites/selected1.png"));
-		selected1.setScale(5);
-		selected1.setX((x * 5) + 40);
-		selected1.setY((y * 5) + 90);
-		selected1.setAlpha(0);
+		iconSelected.setScale(5);
+		iconSelected.setX((x * 5) + 40);
+		iconSelected.setY((y * 5) + 90);
+		iconSelected.setAlpha(0);
 		
 		camera.position.set(800, 500, 0);
 		renderer.setView(camera);
