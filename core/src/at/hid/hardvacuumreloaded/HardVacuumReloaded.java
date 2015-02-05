@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import at.hid.hardvacuumreloaded.screens.Splash;
 
+import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -31,6 +32,7 @@ public class HardVacuumReloaded extends Game {
 	public static final AssetManager assets = new AssetManager();
 	public static final Random random = new Random();
 	public static PlayerProfile playerProfile = new PlayerProfile();
+	public static Engine engine = new Engine();
 	
 	/**
 	 * creates the language bundle
@@ -134,7 +136,12 @@ public class HardVacuumReloaded extends Game {
 		assets.load("img/splash.jpg", Texture.class);
 		assets.finishLoading();
 		
-		FileHandle fhPlayerProfile = Gdx.files.external(".hardvacuumreloaded/playerprofile.dat");
+		FileHandle fhPlayerProfile;
+		if (Gdx.files.isExternalStorageAvailable()) {
+			fhPlayerProfile = Gdx.files.external(".hardvacuumreloaded/playerprofile.dat");
+		} else {
+			fhPlayerProfile = Gdx.files.local(".hardvacuumreloaded/playerprofile.dat");
+		}
 		if (!fhPlayerProfile.exists()) { // TODO Revisit
 			JSONObject json = new JSONObject();
 			try {

@@ -2,9 +2,14 @@ package at.hid.hardvacuumreloaded.screens;
 
 import java.util.ArrayList;
 
+import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import at.hid.hardvacuumreloaded.entities.Miner;
+import at.hid.hardvacuumreloaded.entities.MovementSystem;
+import at.hid.hardvacuumreloaded.entities.PositionComponent;
+import at.hid.hardvacuumreloaded.entities.VelocityComponent;
 
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -46,6 +51,8 @@ public class GameScreen implements Screen {
 		renderer.setView(camera);
 		renderer.render();
 		
+		HardVacuumReloaded.engine.update(delta);
+		
 		renderer.getBatch().begin();
 		miner.draw(renderer.getBatch());
 		renderer.getBatch().end();
@@ -54,8 +61,8 @@ public class GameScreen implements Screen {
 		iconSelected.draw(renderer.getBatch());
 		renderer.getBatch().end();
 		
-		if (miner.hasTarget())
-			miner.update(Gdx.graphics.getDeltaTime());
+//		if (miner.hasTarget())
+//			miner.update(Gdx.graphics.getDeltaTime());
 		
 		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			float x = Gdx.input.getX();
@@ -134,9 +141,17 @@ public class GameScreen implements Screen {
 		renderer = new OrthogonalTiledMapRenderer(map, unitScale);
 		camera = new OrthographicCamera();
 		
-		iconSelected = new Sprite(new Texture("sprites/selected1.png"));
-		miner = new Miner(new Sprite(new Texture("sprites/miner1.png")), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
-		entities.add(miner);
+//		Entity miner = new Entity();
+//		miner.add(new PositionComponent());
+//		miner.add(new VelocityComponent()); //new
+//		HardVacuumReloaded.engine.addEntity(miner);
+		
+		MovementSystem movementSystem = new MovementSystem();
+		HardVacuumReloaded.engine.addSystem(movementSystem);
+		
+		iconSelected = new Sprite(Assets.selectedIcon);
+		miner = new Miner(new Sprite(Assets.minerN), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
+//		entities.add(miner);
 
 		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
 		float y = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("y");
