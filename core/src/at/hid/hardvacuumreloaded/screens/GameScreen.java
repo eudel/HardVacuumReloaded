@@ -12,6 +12,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -35,6 +36,7 @@ public class GameScreen implements Screen {
 	private OrthographicCamera camera;
 	private ArrayList<Object> entities = new ArrayList<Object>();
 	private Miner miner;
+//	private Animation iconSelected;
 	private Sprite iconSelected;
 
 	@Override
@@ -134,7 +136,8 @@ public class GameScreen implements Screen {
 		camera = new OrthographicCamera();
 		
 		iconSelected = new Sprite(Assets.selectedIcon);
-		miner = new Miner(new Sprite(Assets.minerN), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
+//		iconSelected = Assets.selectedIcon;
+		miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
 		entities.add(miner);
 
 		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");

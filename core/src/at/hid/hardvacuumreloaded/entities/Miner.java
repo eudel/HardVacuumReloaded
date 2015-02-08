@@ -1,5 +1,7 @@
 package at.hid.hardvacuumreloaded.entities;
 
+import at.hid.hardvacuumreloaded.Assets;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -70,6 +72,25 @@ public class Miner extends Sprite {
 			velocity.y = speed;
 		else if (velocity.y < -speed)
 			velocity.y = -speed;
+		
+		// set skin according to move direction
+		if (velocity.y > 0)
+			setRegion(Assets.minerN);
+		if (velocity.x > 0)
+			setRegion(Assets.minerE);
+		if (velocity.y < 0)
+			setRegion(Assets.minerS);
+		if (velocity.x < 0)
+			setRegion(Assets.minerW);
+		
+		if ((velocity.x > 0) && (velocity.y > 0))
+			setRegion(Assets.minerNE);
+		if ((velocity.x > 0) && (velocity.y < 0))
+			setRegion(Assets.minerSE);
+		if ((velocity.x < 0) && (velocity.y < 0))
+			setRegion(Assets.minerSW);
+		if ((velocity.x < 0) && (velocity.y > 0))
+			setRegion(Assets.minerNW);
 
 		// save old position
 		float oldX = getX(), oldY = getY();
