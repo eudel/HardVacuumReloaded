@@ -5,18 +5,13 @@ import java.util.ArrayList;
 import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import at.hid.hardvacuumreloaded.entities.Miner;
-import at.hid.hardvacuumreloaded.entities.MovementSystem;
-import at.hid.hardvacuumreloaded.entities.PositionComponent;
-import at.hid.hardvacuumreloaded.entities.VelocityComponent;
 
-import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -61,8 +56,8 @@ public class GameScreen implements Screen {
 		iconSelected.draw(renderer.getBatch());
 		renderer.getBatch().end();
 		
-//		if (miner.hasTarget())
-//			miner.update(Gdx.graphics.getDeltaTime());
+		if (miner.hasTarget())
+			miner.update(Gdx.graphics.getDeltaTime());
 		
 		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			float x = Gdx.input.getX();
@@ -71,20 +66,17 @@ public class GameScreen implements Screen {
 			if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
 				HardVacuumReloaded.playerProfile.setUnitSelected(true);
 				miner.setSelected(true);
-//				iconSelected.setAlpha(1);
+				iconSelected.setAlpha(1);
 			} else {
 				HardVacuumReloaded.playerProfile.setUnitSelected(false);
 				miner.setSelected(false);
-//				iconSelected.setAlpha(0);
+				iconSelected.setAlpha(0);
 			}
 		} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
 			int x = Gdx.input.getX();
 			int y = 1000 - Gdx.input.getY();
 			
 			miner.setTarget(x, y);
-
-//			miner.setCenter(x, y);
-//			iconSelected.setCenter(x, y + 50);
 		}
 		
 		stage.act(delta);
@@ -107,7 +99,7 @@ public class GameScreen implements Screen {
 		stage = new Stage(new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
 
 		Gdx.input.setInputProcessor(stage);
-
+		
 		// creating skin
 		HardVacuumReloaded.debug(this.getClass().toString(), "creating skin");
 		HardVacuumReloaded.assets.update();
@@ -141,17 +133,9 @@ public class GameScreen implements Screen {
 		renderer = new OrthogonalTiledMapRenderer(map, unitScale);
 		camera = new OrthographicCamera();
 		
-//		Entity miner = new Entity();
-//		miner.add(new PositionComponent());
-//		miner.add(new VelocityComponent()); //new
-//		HardVacuumReloaded.engine.addEntity(miner);
-		
-		MovementSystem movementSystem = new MovementSystem();
-		HardVacuumReloaded.engine.addSystem(movementSystem);
-		
 		iconSelected = new Sprite(Assets.selectedIcon);
 		miner = new Miner(new Sprite(Assets.minerN), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
-//		entities.add(miner);
+		entities.add(miner);
 
 		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
 		float y = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("y");
