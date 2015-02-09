@@ -1,6 +1,7 @@
 package at.hid.hardvacuumreloaded.screens;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
@@ -10,13 +11,19 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -36,20 +43,20 @@ public class GameScreen implements Screen {
 	private OrthographicCamera camera;
 	private ArrayList<Object> entities = new ArrayList<Object>();
 	private Miner miner;
-//	private Animation iconSelected;
+	//	private Animation iconSelected;
 	private Sprite iconSelected;
+	private Rectangle rect;
 
 	@Override
 	public void render(float delta) {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		
-		
+
 		renderer.setView(camera);
 		renderer.render();
-		
+
 		HardVacuumReloaded.engine.update(delta);
-		
+
 		renderer.getBatch().begin();
 		miner.draw(renderer.getBatch());
 		renderer.getBatch().end();
@@ -57,14 +64,14 @@ public class GameScreen implements Screen {
 		renderer.getBatch().begin();
 		iconSelected.draw(renderer.getBatch());
 		renderer.getBatch().end();
-		
+
 		if (miner.hasTarget())
 			miner.update(Gdx.graphics.getDeltaTime());
-		
+
 		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
 			float x = Gdx.input.getX();
 			float y = 1000 - Gdx.input.getY();
-			
+
 			if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
 				HardVacuumReloaded.playerProfile.setUnitSelected(true);
 				miner.setSelected(true);
@@ -77,10 +84,16 @@ public class GameScreen implements Screen {
 		} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
 			int x = Gdx.input.getX();
 			int y = 1000 - Gdx.input.getY();
-			
+
 			miner.setTarget(x, y);
 		}
+		ShapeRenderer shapeRenderer = new ShapeRenderer();
+		shapeRenderer.setProjectionMatrix(camera.combined);
 		
+		shapeRenderer.begin(ShapeType.Line);
+		shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+		shapeRenderer.end();
+
 		stage.act(delta);
 		stage.draw();
 	}
@@ -94,14 +107,14 @@ public class GameScreen implements Screen {
 		table.invalidateHierarchy();
 		table.setFillParent(true);
 	}
-	
+
 	@Override
 	public void show() {
 		HardVacuumReloaded.debug(this.getClass().toString(), "creating GameScreen screen");
 		stage = new Stage(new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
 
 		Gdx.input.setInputProcessor(stage);
-		
+
 		// creating skin
 		HardVacuumReloaded.debug(this.getClass().toString(), "creating skin");
 		HardVacuumReloaded.assets.update();
@@ -126,31 +139,52 @@ public class GameScreen implements Screen {
 
 		Label lblCredits = new Label(Integer.toString(HardVacuumReloaded.playerProfile.getCredits()), skin);
 		lblCredits.setBounds(1260, 297, 290, 80);
-		
+
 		ScrollPane spContent = new ScrollPane(null, skin);
 		spContent.setBounds(0, 0, 1200, 800);
-		
+
 		TiledMap map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
+
 		float unitScale = 5f;
 		renderer = new OrthogonalTiledMapRenderer(map, unitScale);
 		camera = new OrthographicCamera();
-		
-		iconSelected = new Sprite(Assets.selectedIcon);
-//		iconSelected = Assets.selectedIcon;
-		miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
-		entities.add(miner);
 
-		float x = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("x");
-		float y = (Float) map.getLayers().get("event").getObjects().get("miner").getProperties().get("y");
-		
-		miner.setScale(5);
-		miner.setX((x * 5) + 40);
-		miner.setY((y * 5) + 40);
-		iconSelected.setScale(5);
-		iconSelected.setX((x * 5) + 40);
-		iconSelected.setY((y * 5) + 90);
-		iconSelected.setAlpha(0);
-		
+		MapObjects objects = map.getLayers().get("event").getObjects();
+		for (int i = 0; i < objects.getCount(); i++) {
+			MapObject object = objects.get(i);
+
+			if (object.getName().equals("spawn")) {
+				if (object.getProperties().get("spawn").equals("miner")) {
+					iconSelected = new Sprite(Assets.selectedIcon);
+					miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
+					entities.add(miner);
+					miner.setId(entities.size());
+					
+					float x = (Float) object.getProperties().get("x");
+					float y = (Float) object.getProperties().get("y");
+					
+					miner.setScale(5);
+					miner.setX((x * 5) + 40);
+					miner.setY((y * 5) + 40);
+					iconSelected.setScale(5);
+					iconSelected.setX((x * 5) + 40);
+					iconSelected.setY((y * 5) + 90);
+					iconSelected.setAlpha(0);
+				}
+			} else if (object.getName().equals("target")) {
+				float x = (Float) object.getProperties().get("x");
+				float y = (Float) object.getProperties().get("y");
+				int width = Integer.parseInt(object.getProperties().get("width").toString());
+				int height = Integer.parseInt(object.getProperties().get("height").toString());
+				
+				RectangleMapObject target = new RectangleMapObject(x * 5, y * 5, width * 5, height * 5);
+				rect = target.getRectangle();
+				
+			}
+		}
+
+
+
 		camera.position.set(800, 500, 0);
 		renderer.setView(camera);
 
@@ -189,7 +223,7 @@ public class GameScreen implements Screen {
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Stats());
 			}
 		});
-		
+
 		ImageButton ibtnMenuAirstrike = new ImageButton(skin, "menu.airstrike");
 		ibtnMenuAirstrike.setBounds(1235, 105, 115, 90);
 		if (!HardVacuumReloaded.playerProfile.isOnMission()) {
@@ -202,7 +236,7 @@ public class GameScreen implements Screen {
 				}
 			});
 		}
-		
+
 		ImageButton ibtnMenuSelectGroup = new ImageButton(skin, "menu.selectGroup");
 		ibtnMenuSelectGroup.setBounds(1350, 105, 115, 90);
 		if (!HardVacuumReloaded.playerProfile.isOnMission()) {
@@ -215,7 +249,7 @@ public class GameScreen implements Screen {
 				}
 			});
 		}
-		
+
 		ImageButton ibtnMenuBuy = new ImageButton(skin, "menu.buy");
 		ibtnMenuBuy.setBounds(1465, 105, 115, 90);
 		ibtnMenuBuy.addListener(new ClickListener() {
@@ -225,7 +259,7 @@ public class GameScreen implements Screen {
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 			}
 		});
-		
+
 		ImageButton ibtnMenuHelp = new ImageButton(skin, "menu.help");
 		ibtnMenuHelp.setBounds(1235, 15, 115, 90);
 		ibtnMenuHelp.addListener(new ClickListener() {
@@ -235,7 +269,7 @@ public class GameScreen implements Screen {
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Help());
 			}
 		});
-		
+
 		ImageButton ibtnMenuDisc = new ImageButton(skin, "menu.disc");
 		ibtnMenuDisc.setBounds(1350, 15, 115, 90);
 		ibtnMenuDisc.addListener(new ClickListener() {
@@ -255,7 +289,7 @@ public class GameScreen implements Screen {
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Options());
 			}
 		});
-		
+
 		if (HardVacuumReloaded.DEBUG) {
 			lblHeading.debug();
 			lblHeadingText.debug();

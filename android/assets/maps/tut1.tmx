@@ -303,8 +303,18 @@
   </data>
  </layer>
  <objectgroup name="event">
-  <object name="miner" type="spawn" x="40" y="40" width="20" height="20"/>
-  <object name="mine" type="target" x="100" y="120" width="40" height="20"/>
+  <object name="spawn" x="40" y="40" width="20" height="20">
+   <properties>
+    <property name="spawn" value="miner"/>
+   </properties>
+  </object>
+  <object name="target" x="100" y="120" width="40" height="20">
+   <properties>
+    <property name="height" value="20"/>
+    <property name="target" value="mine"/>
+    <property name="width" value="40"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="enemy"/>
 </map>

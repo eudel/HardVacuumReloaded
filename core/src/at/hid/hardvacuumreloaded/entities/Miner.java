@@ -19,6 +19,8 @@ public class Miner extends Sprite {
 
 	private TiledMapTileLayer collisionLayer;
 	private Sprite iconSelected;
+	
+	private int id;
 
 	public Miner(Sprite sprite, TiledMapTileLayer collisionLayer, Sprite iconSelected) {
 		super(sprite);
@@ -228,6 +230,20 @@ public class Miner extends Sprite {
 
 	public boolean hasTarget() {
 		return target;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void moveXpos(int steps) {
