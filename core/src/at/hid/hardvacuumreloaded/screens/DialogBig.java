@@ -8,6 +8,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Window;
@@ -17,6 +18,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.FocusListener;
 
 public class DialogBig extends Window {
 	private Table headerTable, contentTable, buttonTable;
+	private ScrollPane spContent;
 	private Label lblHeader;
 	private Skin skin;
 
@@ -57,7 +59,8 @@ public class DialogBig extends Window {
 
 		add(headerTable = new Table(skin)).width(1560).height(125);
 		row();
-		add(contentTable = new Table(skin)).width(1560).height(760);
+		add(spContent = new ScrollPane(contentTable = new Table(skin), skin)).width(1560).height(760);
+		contentTable.setFillParent(true);
 		row();
 		add(buttonTable = new Table(skin)).width(1560).height(90);
 
@@ -66,30 +69,30 @@ public class DialogBig extends Window {
 		ImageButton ibtnCancel = new ImageButton(skin, "cancel");
 		ibtnCancel.setBounds(520, 55, 185, 70);
 
-		headerTable.add().height(55).row();
-		headerTable.add(lblHeader).width(900).row();
-		headerTable.add().height(10).row();
+		headerTable.add().height(50).row();
+		headerTable.add(lblHeader).height(70).width(900).row();
 		lblHeader.setAlignment(Align.center);
 
-		buttonTable.add().height(15).width(15);
+		buttonTable.add().height(15).width(10);
 		buttonTable.add().width(185);
-		buttonTable.add().width(1170);
+		buttonTable.add().width(1160);
 		buttonTable.add().width(185);
 		buttonTable.add().width(15).row();
-		buttonTable.add().width(15);
+		buttonTable.add().width(10);
 		buttonTable.add(ibtnOkay).width(185).height(70);
-		buttonTable.add().width(1170);
+		buttonTable.add().width(1160);
 		buttonTable.add(ibtnCancel).width(185).height(65);
 		buttonTable.add().width(15).row();
-		buttonTable.add().height(20).width(15);
+		buttonTable.add().height(20).width(10);
 		buttonTable.add().width(185);
-		buttonTable.add().width(1170);
+		buttonTable.add().width(1160);
 		buttonTable.add().width(185);
 		buttonTable.add().width(15);
 
 		if (HardVacuumReloaded.DEBUG) {
 			debug();
 			headerTable.debug();
+			spContent.debug();
 			contentTable.debug();
 			buttonTable.debug();
 		}
@@ -98,7 +101,8 @@ public class DialogBig extends Window {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				result();
-				if (!cancelHide) hide();
+				if (!cancelHide)
+					hide();
 				cancelHide = false;
 			}
 		});
@@ -106,7 +110,9 @@ public class DialogBig extends Window {
 		ibtnCancel.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if (!cancelHide) hide();
+				cancelled();
+				if (!cancelHide)
+					hide();
 				cancelHide = false;
 			}
 		});
@@ -115,14 +121,31 @@ public class DialogBig extends Window {
 	public DialogBig text(String text) {
 		if (skin == null)
 			throw new IllegalStateException("This method may only be used if a Skin has been set.");
-		return text(new Label(text, skin));
+		Label label = new Label(text, skin);
+		label.setWrap(true);
+		return text(label);
 	}
 
 	public DialogBig text(Label label) {
+		contentTable.add();
 		contentTable.add(label).row();
 		return this;
 	}
 	
+	public DialogBig iconText(String iconStyle, float width, float height, String text) {
+		if (skin == null)
+			throw new IllegalStateException("This method may only be used if a Skin has been set.");
+		Label label = new Label(text, skin);
+		label.setWrap(true);
+		return iconText(new Label("", skin, iconStyle), width, height, label);
+	}
+	
+	public DialogBig iconText(Label labelIcon, float width, float height, Label labelText) {
+		contentTable.add(labelIcon).width(width).height(height);
+		contentTable.add(labelText).width(1300 - width).row();
+		return this;
+	}
+
 	public DialogBig header(String text) {
 		if (skin == null)
 			throw new IllegalStateException("This method may only be used if a Skin has been set.");
@@ -153,6 +176,7 @@ public class DialogBig extends Window {
 		stage.setKeyboardFocus(this);
 		stage.setScrollFocus(this);
 		setPosition(Math.round((stage.getWidth() - getWidth()) / 2), Math.round((stage.getHeight() - getHeight()) / 2));
+		contentTable.add().height(300);
 
 		return this;
 	}
@@ -174,10 +198,13 @@ public class DialogBig extends Window {
 		}
 		remove();
 	}
-	
-	public void result () {
+
+	public void result() {
 	}
 	
+	public void cancelled() {
+	}
+
 	public void cancel() {
 		cancelHide = true;
 	}
