@@ -145,6 +145,7 @@ public class HardVacuumReloaded extends Game {
 		if (!fhPlayerProfile.exists()) { // TODO Revisit
 			JSONObject json = new JSONObject();
 			try {
+				json.put("tut0", false);
 				json.put("tut1", false);
 				json.put("tut2", false);
 				json.put("tut3", false);

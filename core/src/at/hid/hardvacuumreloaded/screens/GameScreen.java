@@ -143,7 +143,12 @@ public class GameScreen implements Screen {
 		ScrollPane spContent = new ScrollPane(null, skin);
 		spContent.setBounds(0, 0, 1200, 800);
 
-		TiledMap map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
+		TiledMap map = null;
+		if (HardVacuumReloaded.playerProfile.isTut0()) {
+			
+		} else if (HardVacuumReloaded.playerProfile.isTut1()) {
+			map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
+		}
 
 		float unitScale = 5f;
 		renderer = new OrthogonalTiledMapRenderer(map, unitScale);

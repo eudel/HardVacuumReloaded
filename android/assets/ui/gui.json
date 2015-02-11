@@ -272,6 +272,56 @@
 			"font": "white64",
 			"fontColor": "white",
 			"background": "field4.black"
+		},
+		"btn.menu.airstrike": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.airstrike.up"
+		},
+		"btn.menu.buy": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.buy.up"
+		},
+		"btn.menu.disc": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.disc.up"
+		},
+		"btn.menu.grab": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.grab.up"
+		},
+		"btn.menu.help": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.help.up"
+		},
+		"btn.menu.info": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.info.up"
+		},
+		"btn.menu.map": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.map.up"
+		},
+		"btn.menu.options": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.options.up"
+		},
+		"btn.menu.selectGroup": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.selectGroup.up"
+		},
+		"btn.menu.stats": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.stats.up"
 		}
 	},
 	"com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {

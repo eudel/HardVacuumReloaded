@@ -6,6 +6,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.missions.Tut0;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -85,7 +86,9 @@ public class MissionMenu implements Screen {
 
 		ArrayList<String> missions = new ArrayList<String>();
 		FileHandle fhMissionsList = null;
-		if (!HardVacuumReloaded.playerProfile.isTut1()) {
+		if (!HardVacuumReloaded.playerProfile.isTut0()) {
+			fhMissionsList = Gdx.files.internal("missions/missions_tut0.json");
+		} else if (!HardVacuumReloaded.playerProfile.isTut1()) {
 			fhMissionsList = Gdx.files.internal("missions/missions_tut1.json");
 		}
 		try {
@@ -109,15 +112,15 @@ public class MissionMenu implements Screen {
 		ibtnExit.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				if (!HardVacuumReloaded.playerProfile.isOnMission()) {
-				DialogSmall dialogExit = new DialogSmall(skin) {
-					@Override
-					public void result() {
-						Gdx.app.exit();
-					}
-				};
-				dialogExit.text("Are you sure?");
-				dialogExit.show(stage);
+				if (!HardVacuumReloaded.playerProfile.isOnMission() || !HardVacuumReloaded.playerProfile.isTut0()) {
+					DialogSmall dialogExit = new DialogSmall(skin) {
+						@Override
+						public void result() {
+							Gdx.app.exit();
+						}
+					};
+					dialogExit.text("Are you sure?");
+					dialogExit.show(stage);
 				} else {
 					((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
 				}
@@ -173,7 +176,7 @@ public class MissionMenu implements Screen {
 
 		ImageButton ibtnEnterMission = new ImageButton(skin, "enterMission");
 		ibtnEnterMission.setBounds(20, 660, 470, 135);
-		if (HardVacuumReloaded.playerProfile.isOnMission()) {
+		if (HardVacuumReloaded.playerProfile.isOnMission() && HardVacuumReloaded.playerProfile.isTut0()) {
 			ibtnEnterMission.setDisabled(true);
 		} else {
 			ibtnEnterMission.addListener(new ClickListener() {
@@ -181,7 +184,11 @@ public class MissionMenu implements Screen {
 				public void clicked(InputEvent event, float x, float y) {
 					if (listMissions.getSelectedIndex() != -1) {
 						HardVacuumReloaded.playerProfile.setOnMission(true);
-						((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+						if (HardVacuumReloaded.playerProfile.isTut0()) {
+							((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
+						} else {
+							new Tut0(stage, skin);
+						}
 					}
 				}
 			});

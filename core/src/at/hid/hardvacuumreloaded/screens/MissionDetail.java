@@ -65,7 +65,9 @@ public class MissionDetail implements Screen {
 
 		FileHandle fhMissionsList = null;
 		JSONObject json = null;
-		if (!HardVacuumReloaded.playerProfile.isTut1()) {
+		if (!HardVacuumReloaded.playerProfile.isTut0()) {
+			fhMissionsList = Gdx.files.internal("missions/missions_tut0.json");
+		} else if (!HardVacuumReloaded.playerProfile.isTut1()) {
 			fhMissionsList = Gdx.files.internal("missions/missions_tut1.json");
 		}
 		try {
