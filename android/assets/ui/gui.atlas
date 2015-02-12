@@ -122,13 +122,6 @@ lblBig.up
   orig: 203, 15
   offset: 0, 0
   index: -1
-dialogSmall1
-  rotate: false
-  xy: 558, 789
-  size: 142, 82
-  orig: 142, 82
-  offset: 0, 0
-  index: -1
 field2
   rotate: false
   xy: 244, 706
@@ -157,20 +150,6 @@ field4.red12
   orig: 80, 120
   offset: 0, 0
   index: -1
-field4.red2
-  rotate: false
-  xy: 552, 667
-  size: 80, 120
-  orig: 80, 120
-  offset: 0, 0
-  index: -1
-lblMenu.buy
-  rotate: false
-  xy: 634, 657
-  size: 79, 130
-  orig: 79, 130
-  offset: 0, 0
-  index: -1
 field2.red1
   rotate: false
   xy: 950, 903
@@ -180,205 +159,177 @@ field2.red1
   index: -1
 lblSmall.down
   rotate: false
-  xy: 800, 918
+  xy: 558, 856
   size: 133, 15
   orig: 133, 15
   offset: 0, 0
   index: -1
 lblSmall.up
   rotate: false
-  xy: 800, 901
+  xy: 800, 918
   size: 133, 15
   orig: 133, 15
   offset: 0, 0
   index: -1
-field3
-  rotate: false
-  xy: 702, 791
-  size: 60, 80
-  orig: 60, 80
-  offset: 0, 0
-  index: -1
 lblMenu.ifc3
   rotate: false
-  xy: 715, 652
+  xy: 243, 526
   size: 80, 137
   orig: 80, 137
   offset: 0, 0
   index: -1
 lblMenu.ifc4
   rotate: false
-  xy: 243, 160
+  xy: 244, 387
   size: 80, 137
   orig: 80, 137
   offset: 0, 0
   index: -1
-lblMap.ifc1
-  rotate: false
-  xy: 243, 88
-  size: 80, 70
-  orig: 80, 70
-  offset: 0, 0
-  index: -1
 lblMenu.mission
   rotate: false
-  xy: 243, 528
+  xy: 325, 562
   size: 79, 135
   orig: 79, 135
   offset: 0, 0
   index: -1
 lblMenu.stats
   rotate: false
-  xy: 244, 393
+  xy: 406, 564
   size: 80, 133
   orig: 80, 133
   offset: 0, 0
   index: -1
+lblMenu.options
+  rotate: false
+  xy: 488, 566
+  size: 79, 131
+  orig: 79, 131
+  offset: 0, 0
+  index: -1
+lblMenu.buy
+  rotate: false
+  xy: 326, 430
+  size: 79, 130
+  orig: 79, 130
+  offset: 0, 0
+  index: -1
 lblMenu.ifc1
   rotate: false
-  xy: 324, 567
+  xy: 407, 432
   size: 80, 130
   orig: 80, 130
   offset: 0, 0
   index: -1
 lblMenu.ifc2
   rotate: false
-  xy: 406, 567
+  xy: 489, 434
   size: 80, 130
   orig: 80, 130
   offset: 0, 0
   index: -1
-field2.red12
+field4.red2
   rotate: false
-  xy: 488, 577
-  size: 60, 120
-  orig: 60, 120
+  xy: 244, 265
+  size: 80, 120
+  orig: 80, 120
   offset: 0, 0
   index: -1
-lblMenu.options
+field2.red12
   rotate: false
-  xy: 326, 434
-  size: 79, 131
-  orig: 79, 131
+  xy: 326, 308
+  size: 60, 120
+  orig: 60, 120
   offset: 0, 0
   index: -1
 field2.red2
   rotate: false
-  xy: 407, 445
+  xy: 243, 143
   size: 60, 120
   orig: 60, 120
   offset: 0, 0
   index: -1
-lblMap.ifc2
-  rotate: false
-  xy: 244, 321
-  size: 80, 70
-  orig: 80, 70
-  offset: 0, 0
-  index: -1
-field4.black
-  rotate: false
-  xy: 244, 299
-  size: 80, 20
-  orig: 80, 20
-  offset: 0, 0
-  index: -1
 lblMap.buy
   rotate: false
-  xy: 326, 362
+  xy: 243, 71
   size: 79, 70
   orig: 79, 70
   offset: 0, 0
   index: -1
-lblMap.options
-  rotate: false
-  xy: 550, 596
-  size: 79, 69
-  orig: 79, 69
-  offset: 0, 0
-  index: -1
-field3.red1
-  rotate: false
-  xy: 407, 363
-  size: 60, 80
-  orig: 60, 80
-  offset: 0, 0
-  index: -1
-lblMap.ifc3
-  rotate: false
-  xy: 326, 297
-  size: 80, 63
-  orig: 80, 63
-  offset: 0, 0
-  index: -1
-lblMap.stats
-  rotate: false
-  xy: 325, 228
-  size: 80, 67
-  orig: 80, 67
-  offset: 0, 0
-  index: -1
-lblMap.mission
-  rotate: false
-  xy: 325, 161
-  size: 79, 65
-  orig: 79, 65
-  offset: 0, 0
-  index: -1
-lblMap.ifc4
-  rotate: false
-  xy: 325, 96
-  size: 80, 63
-  orig: 80, 63
-  offset: 0, 0
-  index: -1
-field3.red12
-  rotate: false
-  xy: 408, 281
-  size: 60, 80
-  orig: 60, 80
-  offset: 0, 0
-  index: -1
-field3.red2
-  rotate: false
-  xy: 631, 575
-  size: 60, 80
-  orig: 60, 80
-  offset: 0, 0
-  index: -1
 enterMission.down
   rotate: false
-  xy: 800, 872
+  xy: 558, 827
   size: 94, 27
   orig: 94, 27
-  offset: 0, 0
-  index: -1
-field4.red
-  rotate: false
-  xy: 243, 66
-  size: 80, 20
-  orig: 80, 20
   offset: 0, 0
   index: -1
 enterMission.up
   rotate: false
-  xy: 325, 67
+  xy: 800, 889
   size: 94, 27
   orig: 94, 27
   offset: 0, 0
   index: -1
-minus.down
+lblMap.ifc3
   rotate: false
-  xy: 206, 1
-  size: 40, 18
-  orig: 40, 18
+  xy: 244, 6
+  size: 80, 63
+  orig: 80, 63
   offset: 0, 0
   index: -1
-category.misc.down
+field3
   rotate: false
-  xy: 550, 581
-  size: 76, 13
-  orig: 76, 13
+  xy: 326, 226
+  size: 60, 80
+  orig: 60, 80
+  offset: 0, 0
+  index: -1
+lblMap.ifc1
+  rotate: false
+  xy: 305, 154
+  size: 80, 70
+  orig: 80, 70
+  offset: 0, 0
+  index: -1
+field3.red1
+  rotate: false
+  xy: 324, 72
+  size: 60, 80
+  orig: 60, 80
+  offset: 0, 0
+  index: -1
+lblMap.options
+  rotate: false
+  xy: 326, 1
+  size: 79, 69
+  orig: 79, 69
+  offset: 0, 0
+  index: -1
+field3.red12
+  rotate: false
+  xy: 386, 72
+  size: 60, 80
+  orig: 60, 80
+  offset: 0, 0
+  index: -1
+lblMap.ifc2
+  rotate: false
+  xy: 387, 154
+  size: 80, 70
+  orig: 80, 70
+  offset: 0, 0
+  index: -1
+lblMap.stats
+  rotate: false
+  xy: 407, 3
+  size: 80, 67
+  orig: 80, 67
+  offset: 0, 0
+  index: -1
+field3.red2
+  rotate: false
+  xy: 448, 72
+  size: 60, 80
+  orig: 60, 80
   offset: 0, 0
   index: -1
 field3.black
@@ -388,163 +339,177 @@ field3.black
   orig: 60, 20
   offset: 0, 0
   index: -1
+field4.black
+  rotate: false
+  xy: 558, 805
+  size: 80, 20
+  orig: 80, 20
+  offset: 0, 0
+  index: -1
+lblMap.mission
+  rotate: false
+  xy: 552, 738
+  size: 79, 65
+  orig: 79, 65
+  offset: 0, 0
+  index: -1
+field4.red
+  rotate: false
+  xy: 552, 716
+  size: 80, 20
+  orig: 80, 20
+  offset: 0, 0
+  index: -1
+lblMap.ifc4
+  rotate: false
+  xy: 569, 651
+  size: 80, 63
+  orig: 80, 63
+  offset: 0, 0
+  index: -1
+category.misc.down
+  rotate: false
+  xy: 569, 636
+  size: 76, 13
+  orig: 76, 13
+  offset: 0, 0
+  index: -1
 category.misc.up
   rotate: false
-  xy: 244, 51
+  xy: 569, 621
   size: 76, 13
   orig: 76, 13
   offset: 0, 0
   index: -1
 category.vehicles.down
   rotate: false
-  xy: 244, 36
+  xy: 569, 606
   size: 76, 13
   orig: 76, 13
   offset: 0, 0
   index: -1
 category.vehicles.up
   rotate: false
-  xy: 244, 21
+  xy: 569, 591
   size: 76, 13
   orig: 76, 13
   offset: 0, 0
   index: -1
-minus.up
-  rotate: false
-  xy: 248, 1
-  size: 40, 18
-  orig: 40, 18
-  offset: 0, 0
-  index: -1
-plus.down
-  rotate: false
-  xy: 290, 1
-  size: 40, 18
-  orig: 40, 18
-  offset: 0, 0
-  index: -1
-field1
-  rotate: false
-  xy: 407, 239
-  size: 40, 40
-  orig: 40, 40
-  offset: 0, 0
-  index: -1
 category.structures.down
   rotate: false
-  xy: 550, 567
-  size: 76, 12
-  orig: 76, 12
-  offset: 0, 0
-  index: -1
-field3.red
-  rotate: false
-  xy: 488, 555
-  size: 60, 20
-  orig: 60, 20
-  offset: 0, 0
-  index: -1
-category.structures.up
-  rotate: false
-  xy: 550, 553
+  xy: 569, 577
   size: 76, 12
   orig: 76, 12
   offset: 0, 0
   index: -1
 lblClass
   rotate: false
-  xy: 244, 667
+  xy: 693, 856
   size: 70, 15
   orig: 70, 15
   offset: 0, 0
   index: -1
+category.structures.up
+  rotate: false
+  xy: 654, 842
+  size: 76, 12
+  orig: 76, 12
+  offset: 0, 0
+  index: -1
 lblEmployer
   rotate: false
-  xy: 628, 558
+  xy: 654, 825
   size: 70, 15
   orig: 70, 15
   offset: 0, 0
   index: -1
 lblObjective
   rotate: false
-  xy: 628, 541
+  xy: 244, 667
   size: 70, 15
   orig: 70, 15
   offset: 0, 0
   index: -1
 lblPayment
   rotate: false
-  xy: 325, 50
+  xy: 571, 560
   size: 70, 15
   orig: 70, 15
   offset: 0, 0
   index: -1
-aircraft.down
+field1
   rotate: false
-  xy: 322, 21
-  size: 32, 27
-  orig: 32, 27
-  offset: 0, 0
-  index: -1
-plus.up
-  rotate: false
-  xy: 332, 1
-  size: 40, 18
-  orig: 40, 18
-  offset: 0, 0
-  index: -1
-aircraft.up
-  rotate: false
-  xy: 356, 21
-  size: 32, 27
-  orig: 32, 27
-  offset: 0, 0
-  index: -1
-exit.down
-  rotate: false
-  xy: 896, 871
-  size: 38, 28
-  orig: 38, 28
+  xy: 571, 518
+  size: 40, 40
+  orig: 40, 40
   offset: 0, 0
   index: -1
 field1.red1
   rotate: false
-  xy: 469, 513
+  xy: 571, 476
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 field1.red12
   rotate: false
-  xy: 469, 471
+  xy: 571, 434
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 field1.red2
   rotate: false
-  xy: 469, 429
+  xy: 613, 518
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
-exit.up
+exit.down
   rotate: false
-  xy: 469, 399
+  xy: 613, 488
   size: 38, 28
   orig: 38, 28
   offset: 0, 0
   index: -1
-control.down
+exit.up
   rotate: false
-  xy: 511, 525
-  size: 32, 28
-  orig: 32, 28
+  xy: 613, 458
+  size: 38, 28
+  orig: 38, 28
+  offset: 0, 0
+  index: -1
+field3.red
+  rotate: false
+  xy: 640, 803
+  size: 60, 20
+  orig: 60, 20
+  offset: 0, 0
+  index: -1
+menu.airstrike.down
+  rotate: false
+  xy: 206, 1
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+aircraft.down
+  rotate: false
+  xy: 896, 889
+  size: 32, 27
+  orig: 32, 27
+  offset: 0, 0
+  index: -1
+grid.empty
+  rotate: false
+  xy: 305, 244
+  size: 19, 19
+  orig: 19, 19
   offset: 0, 0
   index: -1
 panel.down
   rotate: false
-  xy: 545, 543
+  xy: 633, 793
   size: 58, 8
   split: 0, 0, 0, 0
   orig: 58, 8
@@ -552,283 +517,318 @@ panel.down
   index: -1
 panel.up
   rotate: false
-  xy: 545, 533
+  xy: 633, 783
   size: 58, 8
   split: 0, 0, 0, 0
   orig: 58, 8
   offset: 0, 0
   index: -1
-control.up
+control.down
   rotate: false
-  xy: 469, 369
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-delete.down
-  rotate: false
-  xy: 511, 495
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-delete.up
-  rotate: false
-  xy: 545, 503
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-kill.down
-  rotate: false
-  xy: 511, 465
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-kill.up
-  rotate: false
-  xy: 545, 473
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-load.down
-  rotate: false
-  xy: 511, 435
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-load.up
-  rotate: false
-  xy: 545, 443
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-menu.airstrike.down
-  rotate: false
-  xy: 374, 1
-  size: 23, 18
-  orig: 23, 18
-  offset: 0, 0
-  index: -1
-music.down
-  rotate: false
-  xy: 470, 339
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-music.up
-  rotate: false
-  xy: 470, 309
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-boat.down
-  rotate: false
-  xy: 470, 280
-  size: 32, 27
-  orig: 32, 27
-  offset: 0, 0
-  index: -1
-save.down
-  rotate: false
-  xy: 579, 503
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-save.up
-  rotate: false
-  xy: 579, 473
-  size: 32, 28
-  orig: 32, 28
-  offset: 0, 0
-  index: -1
-sound.down
-  rotate: false
-  xy: 579, 443
+  xy: 633, 753
   size: 32, 28
   orig: 32, 28
   offset: 0, 0
   index: -1
 field2.black
   rotate: false
-  xy: 407, 217
+  xy: 613, 436
   size: 40, 20
   orig: 40, 20
   offset: 0, 0
   index: -1
-field2.red
+control.up
   rotate: false
-  xy: 406, 195
-  size: 40, 20
-  orig: 40, 20
-  offset: 0, 0
-  index: -1
-sound.up
-  rotate: false
-  xy: 406, 165
+  xy: 667, 753
   size: 32, 28
   orig: 32, 28
   offset: 0, 0
   index: -1
+cancel.down
+  rotate: false
+  xy: 633, 738
+  size: 37, 13
+  orig: 37, 13
+  offset: 0, 0
+  index: -1
+field2.red
+  rotate: false
+  xy: 634, 716
+  size: 40, 20
+  orig: 40, 20
+  offset: 0, 0
+  index: -1
+delete.down
+  rotate: false
+  xy: 651, 686
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+delete.up
+  rotate: false
+  xy: 651, 656
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+kill.down
+  rotate: false
+  xy: 489, 42
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+kill.up
+  rotate: false
+  xy: 489, 12
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+load.down
+  rotate: false
+  xy: 388, 400
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+load.up
+  rotate: false
+  xy: 388, 370
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+music.down
+  rotate: false
+  xy: 388, 340
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+music.up
+  rotate: false
+  xy: 388, 310
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+save.down
+  rotate: false
+  xy: 388, 280
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+save.up
+  rotate: false
+  xy: 388, 250
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+sound.down
+  rotate: false
+  xy: 422, 402
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+sound.up
+  rotate: false
+  xy: 422, 372
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+aircraft.up
+  rotate: false
+  xy: 422, 343
+  size: 32, 27
+  orig: 32, 27
+  offset: 0, 0
+  index: -1
+boat.down
+  rotate: false
+  xy: 422, 314
+  size: 32, 27
+  orig: 32, 27
+  offset: 0, 0
+  index: -1
 boat.up
   rotate: false
-  xy: 407, 136
+  xy: 422, 285
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 details.down
   rotate: false
-  xy: 407, 107
+  xy: 422, 256
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
-select.both.down
-  rotate: false
-  xy: 693, 634
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
-okay.down
-  rotate: false
-  xy: 715, 636
-  size: 37, 14
-  orig: 37, 14
-  offset: 0, 0
-  index: -1
-okay.up
-  rotate: false
-  xy: 754, 636
-  size: 37, 14
-  orig: 37, 14
-  offset: 0, 0
-  index: -1
 details.up
   rotate: false
-  xy: 693, 605
+  xy: 456, 403
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 diplomacy.down
   rotate: false
-  xy: 693, 576
+  xy: 456, 374
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 diplomacy.up
   rotate: false
-  xy: 727, 607
+  xy: 456, 345
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 structures.down
   rotate: false
-  xy: 727, 578
+  xy: 456, 316
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 structures.up
   rotate: false
-  xy: 761, 607
+  xy: 456, 287
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 tank.down
   rotate: false
-  xy: 761, 578
+  xy: 456, 258
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
 tank.up
   rotate: false
-  xy: 700, 547
+  xy: 490, 405
   size: 32, 27
   orig: 32, 27
   offset: 0, 0
   index: -1
-cancel.down
+minus.down
   rotate: false
-  xy: 734, 563
-  size: 37, 13
-  orig: 37, 13
+  xy: 524, 414
+  size: 40, 18
+  orig: 40, 18
+  offset: 0, 0
+  index: -1
+minus.up
+  rotate: false
+  xy: 566, 414
+  size: 40, 18
+  orig: 40, 18
+  offset: 0, 0
+  index: -1
+plus.down
+  rotate: false
+  xy: 388, 230
+  size: 40, 18
+  orig: 40, 18
+  offset: 0, 0
+  index: -1
+plus.up
+  rotate: false
+  xy: 490, 385
+  size: 40, 18
+  orig: 40, 18
+  offset: 0, 0
+  index: -1
+okay.down
+  rotate: false
+  xy: 490, 369
+  size: 37, 14
+  orig: 37, 14
+  offset: 0, 0
+  index: -1
+okay.up
+  rotate: false
+  xy: 490, 353
+  size: 37, 14
+  orig: 37, 14
   offset: 0, 0
   index: -1
 cancel.up
   rotate: false
-  xy: 734, 548
+  xy: 490, 338
   size: 37, 13
   orig: 37, 13
   offset: 0, 0
   index: -1
-select.both.up
-  rotate: false
-  xy: 773, 555
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
-grid.empty
-  rotate: false
-  xy: 449, 260
-  size: 19, 19
-  orig: 19, 19
-  offset: 0, 0
-  index: -1
 menu.airstrike.up
   rotate: false
-  xy: 470, 260
+  xy: 490, 318
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.buy.down
   rotate: false
-  xy: 449, 240
+  xy: 490, 298
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.buy.up
   rotate: false
-  xy: 449, 220
+  xy: 490, 278
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
-select.empty
-  rotate: false
-  xy: 474, 237
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
 menu.disc.down
   rotate: false
-  xy: 397, 47
+  xy: 490, 258
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 field1.black
   rotate: false
-  xy: 474, 215
+  xy: 702, 803
   size: 20, 20
   orig: 20, 20
+  offset: 0, 0
+  index: -1
+menu.disc.up
+  rotate: false
+  xy: 693, 783
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+select.both.down
+  rotate: false
+  xy: 701, 760
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+menu.grab.down
+  rotate: false
+  xy: 732, 836
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+menu.grab.up
+  rotate: false
+  xy: 430, 236
+  size: 23, 18
+  orig: 23, 18
   offset: 0, 0
   index: -1
 vScrollDown.down
@@ -838,187 +838,172 @@ vScrollDown.down
   orig: 12, 13
   offset: 0, 0
   index: -1
-menu.disc.up
+select.both.up
   rotate: false
-  xy: 390, 27
-  size: 23, 18
-  orig: 23, 18
+  xy: 515, 315
+  size: 20, 21
+  orig: 20, 21
   offset: 0, 0
   index: -1
-menu.grab.down
+select.empty
   rotate: false
-  xy: 545, 423
-  size: 23, 18
-  orig: 23, 18
+  xy: 515, 292
+  size: 20, 21
+  orig: 20, 21
   offset: 0, 0
   index: -1
-menu.grab.up
+select.left.down
   rotate: false
-  xy: 570, 423
-  size: 23, 18
-  orig: 23, 18
-  offset: 0, 0
-  index: -1
-field1.red
-  rotate: false
-  xy: 595, 421
-  size: 20, 20
-  orig: 20, 20
+  xy: 515, 269
+  size: 20, 21
+  orig: 20, 21
   offset: 0, 0
   index: -1
 menu.help.down
   rotate: false
-  xy: 449, 200
+  xy: 532, 394
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.help.up
   rotate: false
-  xy: 474, 195
+  xy: 557, 394
   size: 23, 18
   orig: 23, 18
-  offset: 0, 0
-  index: -1
-select.left.down
-  rotate: false
-  xy: 399, 4
-  size: 20, 21
-  orig: 20, 21
   offset: 0, 0
   index: -1
 menu.info.down
   rotate: false
-  xy: 415, 27
+  xy: 582, 394
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
-select.left.up
-  rotate: false
-  xy: 421, 4
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
-select.right.down
-  rotate: false
-  xy: 421, 84
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
 menu.info.up
   rotate: false
-  xy: 700, 527
+  xy: 532, 374
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.map.down
   rotate: false
-  xy: 511, 415
+  xy: 557, 374
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.map.up
   rotate: false
-  xy: 509, 395
+  xy: 582, 374
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.options.down
   rotate: false
-  xy: 503, 375
+  xy: 529, 354
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
-select.right.up
-  rotate: false
-  xy: 504, 352
-  size: 20, 21
-  orig: 20, 21
-  offset: 0, 0
-  index: -1
 menu.options.up
   rotate: false
-  xy: 504, 332
+  xy: 554, 354
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.selectGroup.down
   rotate: false
-  xy: 504, 312
+  xy: 579, 354
   size: 23, 18
   orig: 23, 18
+  offset: 0, 0
+  index: -1
+field1.red
+  rotate: false
+  xy: 515, 247
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+vScrollDown.up
+  rotate: false
+  xy: 672, 738
+  size: 12, 13
+  orig: 12, 13
   offset: 0, 0
   index: -1
 menu.selectGroup.up
   rotate: false
-  xy: 504, 292
+  xy: 718, 783
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
+select.left.up
+  rotate: false
+  xy: 723, 760
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
 menu.stats.down
   rotate: false
-  xy: 504, 272
+  xy: 701, 740
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
 menu.stats.up
   rotate: false
-  xy: 936, 883
+  xy: 726, 740
   size: 23, 18
   orig: 23, 18
   offset: 0, 0
   index: -1
-vScrollDown.up
+select.right.down
   rotate: false
-  xy: 763, 875
-  size: 12, 13
-  orig: 12, 13
+  xy: 537, 331
+  size: 20, 21
+  orig: 20, 21
+  offset: 0, 0
+  index: -1
+select.right.up
+  rotate: false
+  xy: 537, 308
+  size: 20, 21
+  orig: 20, 21
   offset: 0, 0
   index: -1
 vScrollUp.down
   rotate: false
-  xy: 605, 538
+  xy: 935, 920
   size: 12, 13
   orig: 12, 13
   offset: 0, 0
   index: -1
 vScrollUp.up
   rotate: false
-  xy: 421, 69
+  xy: 552, 701
   size: 12, 13
   orig: 12, 13
   offset: 0, 0
   index: -1
 checkbox.off
   rotate: false
-  xy: 935, 921
+  xy: 763, 876
   size: 12, 12
   orig: 12, 12
   offset: 0, 0
   index: -1
 checkbox.on
   rotate: false
-  xy: 961, 889
+  xy: 305, 230
   size: 12, 12
   orig: 12, 12
-  offset: 0, 0
-  index: -1
-progressbar.knobBefore
-  rotate: false
-  xy: 320, 688
-  size: 2, 9
-  split: 0, 1, 0, 0
-  orig: 2, 9
   offset: 0, 0
   index: -1
 radio.off
@@ -1030,14 +1015,22 @@ radio.off
   index: -1
 radio.on
   rotate: false
-  xy: 777, 877
+  xy: 231, 8
   size: 10, 11
   orig: 10, 11
   offset: 0, 0
   index: -1
+progressbar.knobBefore
+  rotate: false
+  xy: 305, 143
+  size: 2, 9
+  split: 0, 1, 0, 0
+  orig: 2, 9
+  offset: 0, 0
+  index: -1
 default.selection
   rotate: false
-  xy: 631, 664
+  xy: 1, 1
   size: 1, 1
   orig: 1, 1
   offset: 0, 0

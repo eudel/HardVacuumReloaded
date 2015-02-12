@@ -2,7 +2,6 @@ package at.hid.hardvacuumreloaded.missions;
 
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import at.hid.hardvacuumreloaded.screens.DialogBig;
-import at.hid.hardvacuumreloaded.screens.GameScreen;
 import at.hid.hardvacuumreloaded.screens.MissionMenu;
 
 import com.badlogic.gdx.Game;
@@ -42,6 +41,7 @@ public class Tut0 {
 		tut0.text(" ");
 		tut0.text(" ");
 		tut0.text(" ");
+		tut0.setBtnCancelDisabled(true);
 		tut0.show(stage);
 	}
 }

@@ -20,9 +20,10 @@ public class DialogBig extends Window {
 	private Table headerTable, contentTable, buttonTable;
 	private ScrollPane spContent;
 	private Label lblHeader;
+	private ImageButton ibtnCancel;
 	private Skin skin;
 
-	private boolean cancelHide;
+	private boolean cancelHide, btnCancelDisabled;
 	private Actor previousKeyboardFocus, previousScrollFocus;
 	private FocusListener focusListener;
 
@@ -66,7 +67,7 @@ public class DialogBig extends Window {
 
 		ImageButton ibtnOkay = new ImageButton(skin, "okay");
 		ibtnOkay.setBounds(30, 55, 185, 70);
-		ImageButton ibtnCancel = new ImageButton(skin, "cancel");
+		ibtnCancel = new ImageButton(skin, "cancel");
 		ibtnCancel.setBounds(520, 55, 185, 70);
 
 		headerTable.add().height(50).row();
@@ -110,10 +111,12 @@ public class DialogBig extends Window {
 		ibtnCancel.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				cancelled();
-				if (!cancelHide)
-					hide();
-				cancelHide = false;
+				if (!isBtnCancelDisabled()) {
+					cancelled();
+					if (!cancelHide)
+						hide();
+					cancelHide = false;
+				}
 			}
 		});
 	}
@@ -131,7 +134,7 @@ public class DialogBig extends Window {
 		contentTable.add(label).row();
 		return this;
 	}
-	
+
 	public DialogBig iconText(String iconStyle, float width, float height, String text) {
 		if (skin == null)
 			throw new IllegalStateException("This method may only be used if a Skin has been set.");
@@ -139,7 +142,7 @@ public class DialogBig extends Window {
 		label.setWrap(true);
 		return iconText(new Label("", skin, iconStyle), width, height, label);
 	}
-	
+
 	public DialogBig iconText(Label labelIcon, float width, float height, Label labelText) {
 		contentTable.add(labelIcon).width(width).height(height);
 		contentTable.add(labelText).width(1300 - width).row();
@@ -201,11 +204,24 @@ public class DialogBig extends Window {
 
 	public void result() {
 	}
-	
+
 	public void cancelled() {
 	}
 
 	public void cancel() {
 		cancelHide = true;
+	}
+
+	public boolean isBtnCancelDisabled() {
+		return btnCancelDisabled;
+	}
+
+	public void setBtnCancelDisabled(boolean btnCancelDisabled) {
+		this.btnCancelDisabled = btnCancelDisabled;
+		if (btnCancelDisabled) {
+			ibtnCancel.setDisabled(true);
+		} else {
+			ibtnCancel.setDisabled(false);
+		}
 	}
 }
