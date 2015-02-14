@@ -61,7 +61,8 @@ public class DialogBig extends Window {
 		add(headerTable = new Table(skin)).width(1560).height(125);
 		row();
 		add(spContent = new ScrollPane(contentTable = new Table(skin), skin)).width(1560).height(760);
-		contentTable.setFillParent(true);
+		spContent.setWidth(1560);
+		spContent.setHeight(760);
 		row();
 		add(buttonTable = new Table(skin)).width(1560).height(90);
 
@@ -131,7 +132,7 @@ public class DialogBig extends Window {
 
 	public DialogBig text(Label label) {
 		contentTable.add();
-		contentTable.add(label).row();
+		contentTable.add(label).width(1300).row();
 		return this;
 	}
 
