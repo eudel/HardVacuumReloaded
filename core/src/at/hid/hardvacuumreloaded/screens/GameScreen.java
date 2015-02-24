@@ -1,8 +1,6 @@
 package at.hid.hardvacuumreloaded.screens;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-
 import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import at.hid.hardvacuumreloaded.entities.Miner;
@@ -11,7 +9,6 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -144,9 +141,9 @@ public class GameScreen implements Screen {
 		spContent.setBounds(0, 0, 1200, 800);
 
 		TiledMap map = null;
-		if (HardVacuumReloaded.playerProfile.isTut0()) {
+		if (!HardVacuumReloaded.playerProfile.isTut0()) {
 			
-		} else if (HardVacuumReloaded.playerProfile.isTut1()) {
+		} else if (!HardVacuumReloaded.playerProfile.isTut1()) {
 			map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
 		}
 
