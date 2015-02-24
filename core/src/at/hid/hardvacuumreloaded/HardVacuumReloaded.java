@@ -9,9 +9,6 @@ import java.util.Random;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import at.hid.hardvacuumreloaded.screens.Splash;
 
 import com.badlogic.ashley.core.Engine;
@@ -21,7 +18,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.Base64Coder;
 import com.badlogic.gdx.utils.I18NBundle;
 
 public class HardVacuumReloaded extends Game {
@@ -142,30 +138,10 @@ public class HardVacuumReloaded extends Game {
 		} else {
 			fhPlayerProfile = Gdx.files.local(".hardvacuumreloaded/playerprofile.dat");
 		}
-		if (!fhPlayerProfile.exists()) { // TODO Revisit
-			JSONObject json = new JSONObject();
-			try {
-				json.put("tut0", false);
-				json.put("tut1", false);
-				json.put("tut2", false);
-				json.put("tut3", false);
-			} catch (JSONException e) {
-				error(this.getClass().toString(), "error creating PlayerProfile JSONObject", e);
-			}
-			String profileAsText = json.toString();
-			String encodedProfile = Base64Coder.encodeString(profileAsText);
-			fhPlayerProfile.writeString(encodedProfile, false, "UTF-8");
+		if (!fhPlayerProfile.exists()) {
+			playerProfile.saveProfile();
 		} else {
-			String encodedProfile = fhPlayerProfile.readString("UTF-8");
-			String profileAsText = Base64Coder.decodeString(encodedProfile);
-			try {
-				JSONObject json = new JSONObject(profileAsText);
-				playerProfile.setTut1(json.getBoolean("tut1"));
-				playerProfile.setTut2(json.getBoolean("tut2"));
-				playerProfile.setTut3(json.getBoolean("tut3"));
-			} catch (JSONException e) {
-				error(this.getClass().toString(), "error creating PlayerProfile JSONObject", e);
-			}
+			playerProfile.loadProfile();
 		}
 
 		setScreen(new Splash());
