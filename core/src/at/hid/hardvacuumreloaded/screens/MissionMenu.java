@@ -183,7 +183,22 @@ public class MissionMenu implements Screen {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
 					if (listMissions.getSelectedIndex() != -1) {
-						HardVacuumReloaded.playerProfile.setOnMission(true);
+						FileHandle fhMissionsList = null;
+						JSONObject json = null;
+						if (!HardVacuumReloaded.playerProfile.isTut0()) {
+							fhMissionsList = Gdx.files.internal("missions/missions_tut0.json");
+						} else if (!HardVacuumReloaded.playerProfile.isTut1()) {
+							fhMissionsList = Gdx.files.internal("missions/missions_tut1.json");
+						}
+						try {
+							JSONObject missionsList = new JSONObject(fhMissionsList.readString());
+							json = missionsList.getJSONObject(Integer.toString(listMissions.getSelectedIndex()));
+							HardVacuumReloaded.gameProfile.setActiveMission(json.getString("id"));
+							HardVacuumReloaded.gameProfile.saveProfile();
+						} catch (JSONException e) {
+							HardVacuumReloaded.error(this.getClass().toString(), "", e);
+						}
+						
 						if (HardVacuumReloaded.playerProfile.isTut0()) {
 							((Game) Gdx.app.getApplicationListener()).setScreen(new GameScreen());
 						} else {

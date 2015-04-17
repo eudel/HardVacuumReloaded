@@ -1,6 +1,7 @@
 package at.hid.hardvacuumreloaded.entities;
 
 import at.hid.hardvacuumreloaded.Assets;
+import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -21,10 +22,10 @@ public class Miner extends Sprite {
 	private Sprite iconSelected;
 	
 	private int id;
-
+	
 	public Miner(Sprite sprite, TiledMapTileLayer collisionLayer, Sprite iconSelected) {
 		super(sprite);
-		this.collisionLayer = collisionLayer;
+		setCollisionLayer(collisionLayer);
 		this.iconSelected = iconSelected;
 	}
 
@@ -120,6 +121,7 @@ public class Miner extends Sprite {
 				setX(oldX);
 				velocity.x = 0;
 			}
+			HardVacuumReloaded.gameProfile.saveProfile();
 		} else if (velocity.x > 0) {
 			try {
 				// top right
@@ -140,6 +142,7 @@ public class Miner extends Sprite {
 				setX(oldX);
 				velocity.x = 0;
 			}
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 
 		// move on y
@@ -164,6 +167,7 @@ public class Miner extends Sprite {
 				setY(oldY);
 				velocity.y = 0;
 			}
+			HardVacuumReloaded.gameProfile.saveProfile();
 		} else if (velocity.y > 0) {
 			try {
 				// top left
@@ -184,6 +188,7 @@ public class Miner extends Sprite {
 				setY(oldY);
 				velocity.y = 0;
 			}
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 
 		if ((velocity.x == 0) && (velocity.y == 0))
@@ -191,6 +196,7 @@ public class Miner extends Sprite {
 
 		iconSelected.setX(getX() + velocity.x * delta);
 		iconSelected.setY(getY() + 50 + velocity.y * delta);
+//		HardVacuumReloaded.gameProfile.saveProfile();
 	}
 
 	public boolean isSelected() {
@@ -231,19 +237,33 @@ public class Miner extends Sprite {
 	public boolean hasTarget() {
 		return target;
 	}
+	
+	public void setTarget(boolean hasTarget) {
+		this.target = hasTarget;
+	}
 
-	/**
-	 * @return the id
-	 */
 	public int getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public TiledMapTileLayer getCollisionLayer() {
+		return collisionLayer;
+	}
+
+	public void setCollisionLayer(TiledMapTileLayer collisionLayer) {
+		this.collisionLayer = collisionLayer;
+	}
+
+	public Sprite getIconSelected() {
+		return iconSelected;
+	}
+
+	public void setIconSelected(Sprite iconSelected) {
+		this.iconSelected = iconSelected;
 	}
 
 	public void moveXpos(int steps) {
@@ -257,6 +277,7 @@ public class Miner extends Sprite {
 		}
 		if (!collisionX) {
 			setX(newX);
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 	}
 
@@ -271,6 +292,7 @@ public class Miner extends Sprite {
 		}
 		if (!collisionX) {
 			setX(newX);
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 	}
 
@@ -285,6 +307,7 @@ public class Miner extends Sprite {
 		}
 		if (!collisionY) {
 			setY(newY);
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 	}
 
@@ -299,6 +322,7 @@ public class Miner extends Sprite {
 		}
 		if (!collisionY) {
 			setY(newY);
+			HardVacuumReloaded.gameProfile.saveProfile();
 		}
 	}
 }

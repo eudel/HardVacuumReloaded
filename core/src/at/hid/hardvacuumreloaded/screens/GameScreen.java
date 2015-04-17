@@ -1,6 +1,7 @@
 package at.hid.hardvacuumreloaded.screens;
 
 import java.util.ArrayList;
+
 import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import at.hid.hardvacuumreloaded.entities.Miner;
@@ -39,7 +40,6 @@ public class GameScreen implements Screen {
 	private OrthogonalTiledMapRenderer renderer;
 	private OrthographicCamera camera;
 	private ArrayList<Object> entities = new ArrayList<Object>();
-	private Miner miner;
 	//	private Animation iconSelected;
 	private Sprite iconSelected;
 	private Rectangle rect;
@@ -54,39 +54,45 @@ public class GameScreen implements Screen {
 
 		HardVacuumReloaded.engine.update(delta);
 
-		renderer.getBatch().begin();
-		miner.draw(renderer.getBatch());
-		renderer.getBatch().end();
+		for (int i = 0; i < HardVacuumReloaded.gameProfile.getEntities().size(); i++) {
+			if (HardVacuumReloaded.gameProfile.getEntity(i).getClass().equals(Miner.class)) {
+				Miner miner = HardVacuumReloaded.gameProfile.getMiner(i);
 
-		renderer.getBatch().begin();
-		iconSelected.draw(renderer.getBatch());
-		renderer.getBatch().end();
+				renderer.getBatch().begin();
+				miner.draw(renderer.getBatch());
+				miner.getIconSelected().draw(renderer.getBatch());
+				renderer.getBatch().end();
 
-		if (miner.hasTarget())
-			miner.update(Gdx.graphics.getDeltaTime());
+				if (miner.hasTarget())
+					miner.update(Gdx.graphics.getDeltaTime());
 
-		if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
-			float x = Gdx.input.getX();
-			float y = 1000 - Gdx.input.getY();
+				if (Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+					float x = Gdx.input.getX();
+					float y = 1000 - Gdx.input.getY();
 
-			if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
-				HardVacuumReloaded.playerProfile.setUnitSelected(true);
-				miner.setSelected(true);
-				iconSelected.setAlpha(1);
-			} else {
-				HardVacuumReloaded.playerProfile.setUnitSelected(false);
-				miner.setSelected(false);
-				iconSelected.setAlpha(0);
+					if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
+						HardVacuumReloaded.playerProfile.setUnitSelected(true);
+						miner.setSelected(true);
+						miner.getIconSelected().setAlpha(1);
+						HardVacuumReloaded.gameProfile.saveProfile();
+					} else {
+						HardVacuumReloaded.playerProfile.setUnitSelected(false);
+						miner.setSelected(false);
+						miner.getIconSelected().setAlpha(0);
+						HardVacuumReloaded.gameProfile.saveProfile();
+					}
+				} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
+					int x = Gdx.input.getX();
+					int y = 1000 - Gdx.input.getY();
+
+					miner.setTarget(x, y);
+					HardVacuumReloaded.gameProfile.saveProfile();
+				}
 			}
-		} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
-			int x = Gdx.input.getX();
-			int y = 1000 - Gdx.input.getY();
-
-			miner.setTarget(x, y);
 		}
 		ShapeRenderer shapeRenderer = new ShapeRenderer();
 		shapeRenderer.setProjectionMatrix(camera.combined);
-		
+
 		shapeRenderer.begin(ShapeType.Line);
 		shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
 		shapeRenderer.end();
@@ -142,9 +148,10 @@ public class GameScreen implements Screen {
 
 		TiledMap map = null;
 		if (!HardVacuumReloaded.playerProfile.isTut0()) {
-			
+
 		} else if (!HardVacuumReloaded.playerProfile.isTut1()) {
 			map = HardVacuumReloaded.assets.get("maps/tut1.tmx", TiledMap.class);
+			HardVacuumReloaded.gameProfile.setMap("maps/tut1.tmx");
 		}
 
 		float unitScale = 5f;
@@ -156,36 +163,43 @@ public class GameScreen implements Screen {
 			MapObject object = objects.get(i);
 
 			if (object.getName().equals("spawn")) {
-				if (object.getProperties().get("spawn").equals("miner")) {
-					iconSelected = new Sprite(Assets.selectedIcon);
-					miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
-					entities.add(miner);
-					miner.setId(entities.size());
-					
-					float x = (Float) object.getProperties().get("x");
-					float y = (Float) object.getProperties().get("y");
-					
-					miner.setScale(5);
-					miner.setX((x * 5) + 40);
-					miner.setY((y * 5) + 40);
-					iconSelected.setScale(5);
-					iconSelected.setX((x * 5) + 40);
-					iconSelected.setY((y * 5) + 90);
-					iconSelected.setAlpha(0);
+				if (!HardVacuumReloaded.playerProfile.isOnMission()) {
+					if (object.getProperties().get("spawn").equals("miner")) {
+						iconSelected = new Sprite(Assets.selectedIcon);
+						Miner miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
+						miner.setId(entities.size());
+
+						float x = (Float) object.getProperties().get("x");
+						float y = (Float) object.getProperties().get("y");
+
+						miner.setScale(5);
+						miner.setX((x * 5) + 40);
+						miner.setY((y * 5) + 40);
+						iconSelected.setScale(5);
+						iconSelected.setX((x * 5) + 40);
+						iconSelected.setY((y * 5) + 90);
+						iconSelected.setAlpha(0);
+
+						entities = HardVacuumReloaded.gameProfile.getEntities();
+						entities.add(miner);
+						HardVacuumReloaded.gameProfile.setEntities(entities);
+
+						HardVacuumReloaded.playerProfile.setOnMission(true);
+					}
+				} else {
+					entities = HardVacuumReloaded.gameProfile.getEntities();
 				}
 			} else if (object.getName().equals("target")) {
 				float x = (Float) object.getProperties().get("x");
 				float y = (Float) object.getProperties().get("y");
 				int width = Integer.parseInt(object.getProperties().get("width").toString());
 				int height = Integer.parseInt(object.getProperties().get("height").toString());
-				
+
 				RectangleMapObject target = new RectangleMapObject(x * 5, y * 5, width * 5, height * 5);
 				rect = target.getRectangle();
-				
+
 			}
 		}
-
-
 
 		camera.position.set(800, 500, 0);
 		renderer.setView(camera);

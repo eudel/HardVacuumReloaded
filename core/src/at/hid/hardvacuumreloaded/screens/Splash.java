@@ -6,6 +6,7 @@ import at.hid.hardvacuumreloaded.HardVacuumReloaded;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -48,7 +49,20 @@ public class Splash implements Screen {
 		splash.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
 		HardVacuumReloaded.assets.finishLoading();
-		HardVacuumReloaded.debug(this.getClass().toString(), "switching to MainMenu Screen");
+		
+		FileHandle fhGameProfile;
+		if (Gdx.files.isExternalStorageAvailable()) {
+			fhGameProfile = Gdx.files.external(".hardvacuumreloaded/gameprofile.dat");
+		} else {
+			fhGameProfile = Gdx.files.local(".hardvacuumreloaded/gameprofile.dat");
+		}
+		if (!fhGameProfile.exists()) {
+			HardVacuumReloaded.gameProfile.saveProfile();
+		} else {
+			HardVacuumReloaded.gameProfile.loadProfile();
+		}
+		
+		HardVacuumReloaded.debug(this.getClass().toString(), "switching to MissionMenu Screen");
 		((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 	}
 

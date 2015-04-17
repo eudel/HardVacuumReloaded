@@ -28,6 +28,7 @@ public class HardVacuumReloaded extends Game {
 	public static final AssetManager assets = new AssetManager();
 	public static final Random random = new Random();
 	public static PlayerProfile playerProfile = new PlayerProfile();
+	public static GameProfile gameProfile = new GameProfile();
 	public static Engine engine = new Engine();
 	
 	/**
@@ -117,7 +118,7 @@ public class HardVacuumReloaded extends Game {
 			String[] data = Gdx.app.getPreferences(TITLE).getString("lang").split("_");
 			Locale.setDefault(new Locale(data[0], data[1]));
 		} else {
-			Gdx.app.getPreferences(TITLE).putString("lang", Locale.getDefault().toString());
+			Gdx.app.getPreferences(TITLE).putString("lang", Locale.getDefault().toString()); // create preferences file
 			Gdx.app.getPreferences(TITLE).putBoolean("debug", false);
 			Gdx.app.getPreferences(TITLE).putBoolean("fullscreen", false);
 			Gdx.app.getPreferences(TITLE).putBoolean("vsync", true);

@@ -18,6 +18,7 @@ public class Tut0 {
 			public void result() {
 				HardVacuumReloaded.playerProfile.setOnMission(false);
 				HardVacuumReloaded.playerProfile.setTut0(true);
+				HardVacuumReloaded.gameProfile.setActiveMission(null);
 				((Game) Gdx.app.getApplicationListener()).setScreen(new MissionMenu());
 			}
 			
@@ -27,7 +28,7 @@ public class Tut0 {
 			}
 		};
 		
-		ApplicationType appType = Gdx.app.getType();
+		ApplicationType appType = Gdx.app.getType(); // TODO test
 		
 		tut0.text(HardVacuumReloaded.getLangBundle().format("tut0.controls.text"));
 		if (appType.equals(ApplicationType.Android)) {
