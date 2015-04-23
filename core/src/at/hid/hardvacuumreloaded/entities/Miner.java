@@ -23,6 +23,12 @@ public class Miner extends Sprite {
 	
 	private int id;
 	
+	public enum Direction {
+		minerN, minerNE, minerE, minerSE, minerS, minerSW, minerW, minerNW
+	}
+	
+	public Direction direction;
+	
 	public Miner(Sprite sprite, TiledMapTileLayer collisionLayer, Sprite iconSelected) {
 		super(sprite);
 		setCollisionLayer(collisionLayer);
@@ -77,23 +83,39 @@ public class Miner extends Sprite {
 			velocity.y = -speed;
 		
 		// set skin according to move direction
-		if (velocity.y > 0)
+		if (velocity.y > 0) {
 			setRegion(Assets.minerN);
-		if (velocity.x > 0)
+			setDirection(Direction.minerN);
+		}
+		if (velocity.x > 0) {
 			setRegion(Assets.minerE);
-		if (velocity.y < 0)
+			setDirection(Direction.minerE);
+		}
+		if (velocity.y < 0) {
 			setRegion(Assets.minerS);
-		if (velocity.x < 0)
+			setDirection(Direction.minerS);
+		}
+		if (velocity.x < 0) {
 			setRegion(Assets.minerW);
+			setDirection(Direction.minerW);
+		}
 		
-		if ((velocity.x > 0) && (velocity.y > 0))
+		if ((velocity.x > 0) && (velocity.y > 0)) {
 			setRegion(Assets.minerNE);
-		if ((velocity.x > 0) && (velocity.y < 0))
+			setDirection(Direction.minerNE);
+		}
+		if ((velocity.x > 0) && (velocity.y < 0)) {
 			setRegion(Assets.minerSE);
-		if ((velocity.x < 0) && (velocity.y < 0))
+			setDirection(Direction.minerSE);
+		}
+		if ((velocity.x < 0) && (velocity.y < 0)) {
 			setRegion(Assets.minerSW);
-		if ((velocity.x < 0) && (velocity.y > 0))
+			setDirection(Direction.minerSW);
+		}
+		if ((velocity.x < 0) && (velocity.y > 0)) {
 			setRegion(Assets.minerNW);
+			setDirection(Direction.minerNW);
+		}
 
 		// save old position
 		float oldX = getX(), oldY = getY();
@@ -240,6 +262,14 @@ public class Miner extends Sprite {
 	
 	public void setTarget(boolean hasTarget) {
 		this.target = hasTarget;
+	}
+
+	public Direction getDirection() {
+		return direction;
+	}
+
+	public void setDirection(Direction direction) {
+		this.direction = direction;
 	}
 
 	public int getId() {

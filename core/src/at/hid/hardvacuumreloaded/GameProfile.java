@@ -78,6 +78,7 @@ public class GameProfile {
 					jsonEntity.put("hasTarget", miner.hasTarget());
 					jsonEntity.put("targetX", miner.getTargetX());
 					jsonEntity.put("targetY", miner.getTargetY());
+					jsonEntity.put("direction", miner.getDirection());
 				}
 				jsonEntities.put(jsonEntity);
 			}
@@ -131,6 +132,8 @@ public class GameProfile {
 							miner.setTarget(jsonEntity.getBoolean("hasTarget"));
 							miner.setTarget(jsonEntity.getInt("targetX"), jsonEntity.getInt("targetY"));
 						}
+						if (jsonEntity.getString("direction").equals(miner.direction.minerN))
+							miner.setRegion(Assets.minerN);
 						entities.add(miner);
 					}
 				}
