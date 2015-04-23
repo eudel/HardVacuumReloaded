@@ -10,6 +10,7 @@ import at.hid.hardvacuumreloaded.entities.Miner;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.utils.Base64Coder;
@@ -122,7 +123,24 @@ public class GameProfile {
 						iconSelected.setY(jsonEntity.getInt("y") + 50);
 						iconSelected.setScale(5);
 						TiledMap map = HardVacuumReloaded.assets.get(getMap(), TiledMap.class);
-						Miner miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) (map.getLayers().get("collision")), iconSelected);
+						TextureRegion region = null;
+						if (jsonEntity.getString("direction").equals("minerN"))
+							region = Assets.minerN;
+						else if (jsonEntity.getString("direction").equals("minerNE"))
+							region = Assets.minerNE;
+						else if (jsonEntity.getString("direction").equals("minerE"))
+							region = Assets.minerE;
+						else if (jsonEntity.getString("direction").equals("minerSE"))
+							region = Assets.minerSE;
+						else if (jsonEntity.getString("direction").equals("minerS"))
+							region = Assets.minerS;
+						else if (jsonEntity.getString("direction").equals("minerSW"))
+							region = Assets.minerSW;
+						else if (jsonEntity.getString("direction").equals("minerW"))
+							region = Assets.minerW;
+						else if (jsonEntity.getString("direction").equals("minerNW"))
+							region = Assets.minerNW;
+						Miner miner = new Miner(new Sprite(region), (TiledMapTileLayer) (map.getLayers().get("collision")), iconSelected);
 						miner.setX(jsonEntity.getInt("x"));
 						miner.setY(jsonEntity.getInt("y"));
 						if (jsonEntity.has("isSelected"))
@@ -132,8 +150,7 @@ public class GameProfile {
 							miner.setTarget(jsonEntity.getBoolean("hasTarget"));
 							miner.setTarget(jsonEntity.getInt("targetX"), jsonEntity.getInt("targetY"));
 						}
-						if (jsonEntity.getString("direction").equals(miner.direction.minerN))
-							miner.setRegion(Assets.minerN);
+
 						entities.add(miner);
 					}
 				}
