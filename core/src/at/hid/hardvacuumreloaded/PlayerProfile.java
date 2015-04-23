@@ -7,7 +7,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Base64Coder;
 
 public class PlayerProfile {
-	private boolean onMission = false, unitSelected = false, tut0 = false, tut1 = false, tut2 = false, tut3 = false;
+	private boolean onMission = false, tut0 = false, tut1 = false, tut2 = false, tut3 = false;
 	private int credits = 0;
 	private String oldScreen = "";
 
@@ -65,15 +65,6 @@ public class PlayerProfile {
 		saveProfile();
 	}
 
-	public boolean isUnitSelected() {
-		return unitSelected;
-	}
-
-	public void setUnitSelected(boolean unitSelected) {
-		this.unitSelected = unitSelected;
-		saveProfile();
-	}
-
 	public String getOldScreen() {
 		return oldScreen;
 	}
@@ -93,7 +84,6 @@ public class PlayerProfile {
 		JSONObject json = new JSONObject();
 		try {
 			json.put("onMission", isOnMission());
-			json.put("unitSelected", isUnitSelected());
 			json.put("tut0", isTut0());
 			json.put("tut1", isTut1());
 			json.put("tut2", isTut2());
@@ -122,7 +112,6 @@ public class PlayerProfile {
 			String profileAsText = Base64Coder.decodeString(encodedProfile);
 			JSONObject json = new JSONObject(profileAsText);
 			setOnMission(json.getBoolean("onMission"));
-			setUnitSelected(json.getBoolean("tut0"));
 			setTut0(json.getBoolean("tut0"));
 			setTut1(json.getBoolean("tut1"));
 			setTut2(json.getBoolean("tut2"));

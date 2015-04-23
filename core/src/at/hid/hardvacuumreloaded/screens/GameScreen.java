@@ -71,17 +71,15 @@ public class GameScreen implements Screen {
 					float y = 1000 - Gdx.input.getY();
 
 					if ((miner.getX() - 30 < x) && (x < miner.getX() + 50) && (miner.getY() - 30 < y) && (y < miner.getY() + 50)) {
-						HardVacuumReloaded.playerProfile.setUnitSelected(true);
 						miner.setSelected(true);
 						miner.getIconSelected().setAlpha(1);
 						HardVacuumReloaded.gameProfile.saveProfile();
 					} else {
-						HardVacuumReloaded.playerProfile.setUnitSelected(false);
 						miner.setSelected(false);
 						miner.getIconSelected().setAlpha(0);
 						HardVacuumReloaded.gameProfile.saveProfile();
 					}
-				} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (HardVacuumReloaded.playerProfile.isUnitSelected())) {
+				} else if ((Gdx.input.isButtonPressed(Input.Buttons.RIGHT)) && (miner.isSelected())) {
 					int x = Gdx.input.getX();
 					int y = 1000 - Gdx.input.getY();
 
