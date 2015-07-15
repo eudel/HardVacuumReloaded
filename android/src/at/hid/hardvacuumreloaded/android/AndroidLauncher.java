@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.android.api.AndroidApp42;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override
@@ -12,6 +14,6 @@ public class AndroidLauncher extends AndroidApplication {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useWakelock = true;
-		initialize(new HardVacuumReloaded(), config);
+		initialize(new HardVacuumReloaded(new AndroidApp42()), config);
 	}
 }

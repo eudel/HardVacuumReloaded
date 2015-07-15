@@ -2,7 +2,9 @@ package at.hid.hardvacuumreloaded.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.desktop.api.DesktopApp42;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
@@ -14,6 +16,6 @@ public class DesktopLauncher {
 		config.x = 0;
 		config.y = 0;
 		config.resizable = false;
-		new LwjglApplication(new HardVacuumReloaded(), config);
+		new LwjglApplication(new HardVacuumReloaded(new DesktopApp42()), config);
 	}
 }
