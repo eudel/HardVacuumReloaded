@@ -320,6 +320,13 @@
     <property name="width" value="40"/>
    </properties>
   </object>
+  <object name="mine" x="100" y="120" width="40" height="20">
+   <properties>
+    <property name="height" value="20"/>
+    <property name="visible" value="false"/>
+    <property name="width" value="40"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="enemy"/>
 </map>
