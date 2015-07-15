@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import at.hid.hardvacuumreloaded.entities.Mine;
 import at.hid.hardvacuumreloaded.entities.Miner;
 
 import com.badlogic.gdx.Gdx;
@@ -48,6 +49,11 @@ public class GameProfile {
 		return miner;
 	}
 
+	public Mine getMine(int id) {
+		Mine mine = (Mine) entities.get(id);
+		return mine;
+	}
+
 	public void setEntities(ArrayList<Object> entities) {
 		this.entities = entities;
 	}
@@ -80,12 +86,20 @@ public class GameProfile {
 					jsonEntity.put("targetX", miner.getTargetX());
 					jsonEntity.put("targetY", miner.getTargetY());
 					jsonEntity.put("direction", miner.getDirection());
+				} else if (entities.get(i).getClass().equals(Mine.class)) {
+					Mine mine = (Mine) entities.get(i);
+					jsonEntity.put("class", "mine");
+					jsonEntity.put("isSelected", mine.isSelected());
+					jsonEntity.put("x", mine.getX());
+					jsonEntity.put("y", mine.getY());
+					jsonEntity.put("visible", mine.isVisible());
 				}
 				jsonEntities.put(jsonEntity);
 			}
 			json.put("entities", jsonEntities);
 			String profileAsText = json.toString();
-			String encodedProfile = Base64Coder.encodeString(profileAsText);
+			String encodedProfile = profileAsText;
+			//			String encodedProfile = Base64Coder.encodeString(profileAsText);
 			fhGameProfile.writeString(encodedProfile, false, "UTF-8");
 			return true;
 		} catch (Exception e) {
@@ -104,7 +118,8 @@ public class GameProfile {
 		}
 		try {
 			String encodedProfile = fhGameProfile.readString("UTF-8");
-			String profileAsText = Base64Coder.decodeString(encodedProfile);
+			String profileAsText = encodedProfile;
+//			String profileAsText = Base64Coder.decodeString(encodedProfile);
 			JSONObject json = new JSONObject(profileAsText);
 
 			if (json.has("activeMission"))
@@ -124,22 +139,27 @@ public class GameProfile {
 						iconSelected.setScale(5);
 						TiledMap map = HardVacuumReloaded.assets.get(getMap(), TiledMap.class);
 						TextureRegion region = null;
-						if (jsonEntity.getString("direction").equals("minerN"))
-							region = Assets.minerN;
-						else if (jsonEntity.getString("direction").equals("minerNE"))
-							region = Assets.minerNE;
-						else if (jsonEntity.getString("direction").equals("minerE"))
-							region = Assets.minerE;
-						else if (jsonEntity.getString("direction").equals("minerSE"))
-							region = Assets.minerSE;
-						else if (jsonEntity.getString("direction").equals("minerS"))
+						if (jsonEntity.has("direction")) {
+							if (jsonEntity.getString("direction").equals("minerN"))
+								region = Assets.minerN;
+							else if (jsonEntity.getString("direction").equals("minerNE"))
+								region = Assets.minerNE;
+							else if (jsonEntity.getString("direction").equals("minerE"))
+								region = Assets.minerE;
+							else if (jsonEntity.getString("direction").equals("minerSE"))
+								region = Assets.minerSE;
+							else if (jsonEntity.getString("direction").equals("minerS"))
+								region = Assets.minerS;
+							else if (jsonEntity.getString("direction").equals("minerSW"))
+								region = Assets.minerSW;
+							else if (jsonEntity.getString("direction").equals("minerW"))
+								region = Assets.minerW;
+							else if (jsonEntity.getString("direction").equals("minerNW"))
+								region = Assets.minerNW;
+						} else {
 							region = Assets.minerS;
-						else if (jsonEntity.getString("direction").equals("minerSW"))
-							region = Assets.minerSW;
-						else if (jsonEntity.getString("direction").equals("minerW"))
-							region = Assets.minerW;
-						else if (jsonEntity.getString("direction").equals("minerNW"))
-							region = Assets.minerNW;
+						}
+
 						Miner miner = new Miner(new Sprite(region), (TiledMapTileLayer) (map.getLayers().get("collision")), iconSelected);
 						miner.setX(jsonEntity.getInt("x"));
 						miner.setY(jsonEntity.getInt("y"));
@@ -152,6 +172,20 @@ public class GameProfile {
 						}
 
 						entities.add(miner);
+					} else if (jsonEntity.getString("class").equals("mine")) {
+						Sprite iconSelected = new Sprite(Assets.selectedIcon);
+						iconSelected.setX(jsonEntity.getInt("x"));
+						iconSelected.setY(jsonEntity.getInt("y") + 50);
+						iconSelected.setScale(5);
+
+						Mine mine = new Mine(new Sprite(Assets.mine), iconSelected);
+						mine.setX(jsonEntity.getInt("x"));
+						mine.setY(jsonEntity.getInt("y"));
+						if (jsonEntity.has("isSelected"))
+							mine.setSelected(jsonEntity.getBoolean("isSelected"));
+						mine.setScale(5);
+						if (jsonEntity.getString("visible").equals("false"))
+							mine.setAlpha(0);
 					}
 				}
 			}

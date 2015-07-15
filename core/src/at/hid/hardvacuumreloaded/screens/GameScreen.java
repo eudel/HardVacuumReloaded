@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 import at.hid.hardvacuumreloaded.Assets;
 import at.hid.hardvacuumreloaded.HardVacuumReloaded;
+import at.hid.hardvacuumreloaded.entities.Mine;
 import at.hid.hardvacuumreloaded.entities.Miner;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -41,8 +43,9 @@ public class GameScreen implements Screen {
 	private OrthographicCamera camera;
 	private ArrayList<Object> entities = new ArrayList<Object>();
 	//	private Animation iconSelected;
-	private Sprite iconSelected;
-	private Rectangle rect;
+//	private Sprite iconSelected;
+	private ArrayList<Rectangle> targets = new ArrayList<Rectangle>();
+	private ArrayList<Rectangle> mines = new ArrayList<Rectangle>();
 
 	@Override
 	public void render(float delta) {
@@ -86,14 +89,33 @@ public class GameScreen implements Screen {
 					miner.setTarget(x, y);
 					HardVacuumReloaded.gameProfile.saveProfile();
 				}
+			} else if (HardVacuumReloaded.gameProfile.getEntity(i).getClass().equals(Mine.class)) {
+				Mine mine = HardVacuumReloaded.gameProfile.getMine(i);
+
+				renderer.getBatch().begin();
+				mine.draw(renderer.getBatch());
+				//				mine.getIconSelected().draw(renderer.getBatch());
+				renderer.getBatch().end();
 			}
 		}
+		Gdx.gl.glEnable(GL20.GL_BLEND);
 		ShapeRenderer shapeRenderer = new ShapeRenderer();
 		shapeRenderer.setProjectionMatrix(camera.combined);
 
-		shapeRenderer.begin(ShapeType.Line);
-		shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+		shapeRenderer.begin(ShapeType.Filled);
+		shapeRenderer.setColor(1, 0, 0, 0.25f);
+		for (int i = 0; i < mines.size(); i++) {
+			shapeRenderer.rect(mines.get(i).x, mines.get(i).y, mines.get(i).width, mines.get(i).height);
+		}
 		shapeRenderer.end();
+		
+		shapeRenderer.begin(ShapeType.Line);
+		shapeRenderer.setColor(1, 1, 1, 1);
+		for (int i = 0; i < targets.size(); i++) {
+			shapeRenderer.rect(targets.get(i).x, targets.get(i).y, targets.get(i).width, targets.get(i).height);
+		}
+		shapeRenderer.end();
+		Gdx.gl.glDisable(GL20.GL_BLEND);
 
 		stage.act(delta);
 		stage.draw();
@@ -163,7 +185,7 @@ public class GameScreen implements Screen {
 			if (object.getName().equals("spawn")) {
 				if (!HardVacuumReloaded.playerProfile.isOnMission()) {
 					if (object.getProperties().get("spawn").equals("miner")) {
-						iconSelected = new Sprite(Assets.selectedIcon);
+						Sprite iconSelected = new Sprite(Assets.selectedIcon);
 						Miner miner = new Miner(new Sprite(Assets.minerS), (TiledMapTileLayer) map.getLayers().get("collision"), iconSelected);
 						miner.setId(entities.size());
 
@@ -187,6 +209,36 @@ public class GameScreen implements Screen {
 				} else {
 					entities = HardVacuumReloaded.gameProfile.getEntities();
 				}
+			} else if (object.getName().equals("mine")) {
+				float x = (Float) object.getProperties().get("x");
+				float y = (Float) object.getProperties().get("y");
+
+				Sprite iconSelected = new Sprite(Assets.selectedIcon);
+				Mine mine = new Mine(new Sprite(Assets.mine), iconSelected);
+
+				mine.setScale(5);
+				mine.setX((x * 5) + 90);
+				mine.setY((y * 5) + 120);
+				if (object.getProperties().get("visible").toString().equals("false")) {
+					mine.setAlpha(0);
+					
+					int width = Integer.parseInt(object.getProperties().get("width").toString());
+					int height = Integer.parseInt(object.getProperties().get("height").toString());
+					
+					RectangleMapObject mineTarget = new RectangleMapObject(x * 5, y * 5, width * 5, height * 5);
+					mines.add(mineTarget.getRectangle());
+				} else {
+					mine.setAlpha(1);
+				}
+
+				iconSelected.setScale(5);
+				iconSelected.setX(x * 5);
+				iconSelected.setY(y * 5);
+				//				iconSelected.setAlpha(0);
+
+				entities = HardVacuumReloaded.gameProfile.getEntities();
+				entities.add(mine);
+				HardVacuumReloaded.gameProfile.setEntities(entities);
 			} else if (object.getName().equals("target")) {
 				float x = (Float) object.getProperties().get("x");
 				float y = (Float) object.getProperties().get("y");
@@ -194,7 +246,7 @@ public class GameScreen implements Screen {
 				int height = Integer.parseInt(object.getProperties().get("height").toString());
 
 				RectangleMapObject target = new RectangleMapObject(x * 5, y * 5, width * 5, height * 5);
-				rect = target.getRectangle();
+				targets.add(target.getRectangle());
 
 			}
 		}
