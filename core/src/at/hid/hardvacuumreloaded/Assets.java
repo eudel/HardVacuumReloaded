@@ -16,11 +16,14 @@ public class Assets {
 	public static TextureRegion minerNUp, minerNEUp, minerEUp, minerSEUp, minerSUp, minerSWUp, minerWUp, minerNWUp;
 	public static TextureRegion minerNDown, minerNEDown, minerEDown, minerSEDown, minerSDown, minerSWDown, minerWDown, minerNWDown;
 	public static TextureRegion selectedIcon;
+	public static TextureRegion mine;
 //	public static Animation selectedIcon;
 
 	public static void load() {
 		HardVacuumReloaded.assets.load("sprites/miner.png", Texture.class);
 		HardVacuumReloaded.assets.load("sprites/selected.png", Texture.class);
+		HardVacuumReloaded.assets.load("sprites/minerAni.png", Texture.class);
+		HardVacuumReloaded.assets.load("sprites/mine.png", Texture.class);
 		HardVacuumReloaded.assets.finishLoading();
 		
 		HardVacuumReloaded.assets.load("ui/gui.json", Skin.class);
@@ -55,6 +58,8 @@ public class Assets {
 		
 		selectedIcon = new TextureRegion(HardVacuumReloaded.assets.get("sprites/selected.png", Texture.class), 0, 60, 20, 20);
 //		selectedIcon = new Animation(0.2f, new TextureRegion(HardVacuumReloaded.assets.get("sprites/selected.png", Texture.class), 0, 60, 20, 20), new TextureRegion(HardVacuumReloaded.assets.get("sprites/selected.png", Texture.class), 20, 60, 20, 20), new TextureRegion(HardVacuumReloaded.assets.get("sprites/selected.png", Texture.class), 40, 60, 20, 20));
+		
+		mine = new TextureRegion(HardVacuumReloaded.assets.get("sprites/mine.png", Texture.class), 0, 0, 40, 60);
 	}
 	
 	public static void playSound(Sound sound) {
