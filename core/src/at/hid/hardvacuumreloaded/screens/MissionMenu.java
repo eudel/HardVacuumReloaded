@@ -21,8 +21,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.List;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 public class MissionMenu implements Screen {
@@ -49,7 +49,7 @@ public class MissionMenu implements Screen {
 
 	@Override
 	public void show() {
-		HardVacuumReloaded.debug(this.getClass().toString(), "creating MainMenu screen");
+		HardVacuumReloaded.debug(this.getClass().toString(), "creating MissionMenu screen");
 		stage = new Stage(new ExtendViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight()));
 
 		Gdx.input.setInputProcessor(stage);
@@ -62,27 +62,27 @@ public class MissionMenu implements Screen {
 		table = new Table(skin);
 		table.setBounds(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-		Label lblHeading = new Label("", skin, "heading.mission");
-		lblHeading.setBounds(0, 805, 1205, 195);
+		Label lblHeading = new Label("", skin, "heading.mission." + HardVacuumReloaded.scale);
+		lblHeading.setBounds(0, 161 * HardVacuumReloaded.scale, 241 * HardVacuumReloaded.scale, 39 * HardVacuumReloaded.scale);
 
 		Label lblHeadingText = new Label(HardVacuumReloaded.getLangBundle().format("MissionMenu.lblHeadingText.text"), skin, "heading.text");
-		lblHeadingText.setBounds(30, 815, 1155, 175);
+		lblHeadingText.setBounds(6 * HardVacuumReloaded.scale, 163 * HardVacuumReloaded.scale, 231 * HardVacuumReloaded.scale, 35 * HardVacuumReloaded.scale);
 		lblHeadingText.setAlignment(Align.center);
 
-		Label lblMap = new Label("", skin, "map.mission");
-		lblMap.setBounds(1205, 675, 395, 325);
+		Label lblMap = new Label("", skin, "map.mission." + HardVacuumReloaded.scale);
+		lblMap.setBounds(241 * HardVacuumReloaded.scale, 135 * HardVacuumReloaded.scale, 79 * HardVacuumReloaded.scale, 65);
 
-		Label lblContent = new Label("", skin, "content.mission");
-		lblContent.setBounds(0, 0, 1205, 805);
+		Label lblContent = new Label("", skin, "content.mission." + HardVacuumReloaded.scale);
+		lblContent.setBounds(0, 0, 241 * HardVacuumReloaded.scale, 161 * HardVacuumReloaded.scale);
 
-		Label lblMenu = new Label("", skin, "menu.mission");
-		lblMenu.setBounds(1205, 0, 395, 675);
+		Label lblMenu = new Label("", skin, "menu.mission." + HardVacuumReloaded.scale);
+		lblMenu.setBounds(241 * HardVacuumReloaded.scale, 0, 79 * HardVacuumReloaded.scale, 135 * HardVacuumReloaded.scale);
 
-		Label lblCredits = new Label(Integer.toString(HardVacuumReloaded.playerProfile.getCredits()), skin);
-		lblCredits.setBounds(1260, 185, 290, 80);
+		Label lblCredits = new Label(Integer.toString(HardVacuumReloaded.playerProfile.getCredits()), skin,  "" + HardVacuumReloaded.scale);
+		lblCredits.setBounds(252 * HardVacuumReloaded.scale, 37 * HardVacuumReloaded.scale, 58 * HardVacuumReloaded.scale, 16 * HardVacuumReloaded.scale);
 
 		ScrollPane spContent = new ScrollPane(null, skin);
-		spContent.setBounds(40, 40, 1165, 600);
+		spContent.setBounds(8 * HardVacuumReloaded.scale, 8 * HardVacuumReloaded.scale, 233 * HardVacuumReloaded.scale, 120 * HardVacuumReloaded.scale);
 
 		ArrayList<String> missions = new ArrayList<String>();
 		FileHandle fhMissionsList = null;
@@ -108,7 +108,7 @@ public class MissionMenu implements Screen {
 		spContent.setWidget(listMissions);
 
 		ImageButton ibtnExit = new ImageButton(skin, "exit");
-		ibtnExit.setBounds(1000, 660, 190, 140);
+		ibtnExit.setBounds(200 * HardVacuumReloaded.scale, 132 * HardVacuumReloaded.scale, 38 * HardVacuumReloaded.scale, 28 * HardVacuumReloaded.scale);
 		ibtnExit.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
@@ -128,26 +128,26 @@ public class MissionMenu implements Screen {
 		});
 
 		ImageButton ibtnInfo = new ImageButton(skin, "menu.info");
-		ibtnInfo.setBounds(1290, 100, 115, 90);
+		ibtnInfo.setBounds(258 * HardVacuumReloaded.scale, 20 * HardVacuumReloaded.scale, 23 * HardVacuumReloaded.scale, 18 * HardVacuumReloaded.scale);
 		ibtnInfo.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
 				if (listMissions.getSelectedIndex() != -1) {
-					HardVacuumReloaded.playerProfile.setOldScreen("MainMenu");
+					HardVacuumReloaded.playerProfile.setOldScreen("MissionMenu");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new MissionDetail(listMissions.getSelectedIndex()));
 				}
 			}
 		});
 
 		ImageButton ibtnBuy = new ImageButton(skin, "menu.buy");
-		ibtnBuy.setBounds(1405, 100, 115, 90);
+		ibtnBuy.setBounds(281 * HardVacuumReloaded.scale, 20 * HardVacuumReloaded.scale, 23 * HardVacuumReloaded.scale, 18 * HardVacuumReloaded.scale);
 		if (!HardVacuumReloaded.playerProfile.isOnMission()) {
 			ibtnBuy.setDisabled(true);
 		} else {
 			ibtnBuy.addListener(new ClickListener() {
 				@Override
 				public void clicked(InputEvent event, float x, float y) {
-					HardVacuumReloaded.playerProfile.setOldScreen("MainMenu");
+					HardVacuumReloaded.playerProfile.setOldScreen("MissionMenu");
 					((Game) Gdx.app.getApplicationListener()).setScreen(new Buy());
 					//					((Game) Gdx.app.getApplicationListener()).setScreen(new Ifc2());
 				}
@@ -155,27 +155,27 @@ public class MissionMenu implements Screen {
 		}
 
 		ImageButton ibtnStats = new ImageButton(skin, "menu.stats");
-		ibtnStats.setBounds(1290, 10, 115, 90);
+		ibtnStats.setBounds(258 * HardVacuumReloaded.scale, 2 * HardVacuumReloaded.scale, 23 * HardVacuumReloaded.scale, 18 * HardVacuumReloaded.scale);
 		ibtnStats.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("MainMenu");
+				HardVacuumReloaded.playerProfile.setOldScreen("MissionMenu");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Stats());
 			}
 		});
 
 		ImageButton ibtnOptions = new ImageButton(skin, "menu.options");
-		ibtnOptions.setBounds(1405, 10, 115, 90);
+		ibtnOptions.setBounds(281 * HardVacuumReloaded.scale, 2 * HardVacuumReloaded.scale, 23 * HardVacuumReloaded.scale, 18 * HardVacuumReloaded.scale);
 		ibtnOptions.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				HardVacuumReloaded.playerProfile.setOldScreen("MainMenu");
+				HardVacuumReloaded.playerProfile.setOldScreen("MissionMenu");
 				((Game) Gdx.app.getApplicationListener()).setScreen(new Options());
 			}
 		});
 
 		ImageButton ibtnEnterMission = new ImageButton(skin, "enterMission");
-		ibtnEnterMission.setBounds(20, 660, 470, 135);
+		ibtnEnterMission.setBounds(4 * HardVacuumReloaded.scale, 132 * HardVacuumReloaded.scale, 94 * HardVacuumReloaded.scale, 27 * HardVacuumReloaded.scale);
 		if (HardVacuumReloaded.playerProfile.isOnMission() && HardVacuumReloaded.playerProfile.isTut0()) {
 			ibtnEnterMission.setDisabled(true);
 		} else {
@@ -257,7 +257,7 @@ public class MissionMenu implements Screen {
 
 	@Override
 	public void dispose() {
-		HardVacuumReloaded.debug(this.getClass().toString(), "cleaning up MainMenu screen");
+		HardVacuumReloaded.debug(this.getClass().toString(), "cleaning up MissionMenu screen");
 		stage.dispose();
 	}
 
