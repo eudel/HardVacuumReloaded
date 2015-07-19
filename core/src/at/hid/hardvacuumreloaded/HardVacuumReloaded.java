@@ -26,7 +26,7 @@ import com.badlogic.gdx.utils.Base64Coder;
 import com.badlogic.gdx.utils.I18NBundle;
 
 public class HardVacuumReloaded extends Game {
-	public static final String TITLE = "Hard Vacuum Reloaded", VERSION = "0.0.1-alpha";
+	public static final String TITLE = "Hard Vacuum Reloaded", VERSION = "0.0.1-alpha", PATH = ".hidlauncher/" + TITLE, PATH_LAUNCHER = ".hidlauncher/";
 	public static boolean DEBUG;
 	public static int scale;
 
@@ -62,9 +62,9 @@ public class HardVacuumReloaded extends Game {
 	public static void log(String tag, String message) {
 		FileHandle fhLog = null;
 		if (Gdx.files.isExternalStorageAvailable()) {
-			fhLog = Gdx.files.external(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.external(PATH + "/logs/latest.log");
 		} else {
-			fhLog = Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.local(PATH + "/logs/latest.log");
 		}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss: ");
@@ -75,9 +75,9 @@ public class HardVacuumReloaded extends Game {
 	public static void debug(String tag, String message) {
 		FileHandle fhLog = null; 
 		if (Gdx.files.isExternalStorageAvailable()) {
-			fhLog = Gdx.files.external(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.external(PATH + "/logs/latest.log");
 		} else {
-			fhLog = Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.local(PATH + "/logs/latest.log");
 		}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss: ");
@@ -90,9 +90,9 @@ public class HardVacuumReloaded extends Game {
 	public static void error(String tag, String message, Throwable t) {
 		FileHandle fhLog = null;
 		if (Gdx.files.isExternalStorageAvailable()) {
-			fhLog = Gdx.files.external(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.external(PATH + "/logs/latest.log");
 		} else {
-			fhLog = Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.local(PATH + "/logs/latest.log");
 		}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss: ");
@@ -104,9 +104,9 @@ public class HardVacuumReloaded extends Game {
 	public void logrotate() {
 		FileHandle fhLog = null;
 		if (Gdx.files.isExternalStorageAvailable()) {
-			fhLog = Gdx.files.external(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.external(PATH + "/logs/latest.log");
 		} else {
-			fhLog = Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/latest.log");
+			fhLog = Gdx.files.local(PATH + "/logs/latest.log");
 		}
 		fhLog.parent().mkdirs();
 		if (fhLog.exists()) {
@@ -116,18 +116,18 @@ public class HardVacuumReloaded extends Game {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
 				FileOutputStream fos = null;
 				if (Gdx.files.isExternalStorageAvailable()) {
-					fos = new FileOutputStream(Gdx.files.external(".hidlauncher/" + TITLE + "/logs/" + sdf.format(date) + ".zip").file());
+					fos = new FileOutputStream(Gdx.files.external(PATH + "/logs/" + sdf.format(date) + ".zip").file());
 				} else {
-					fos = new FileOutputStream(Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/" + sdf.format(date) + ".zip").file());
+					fos = new FileOutputStream(Gdx.files.local(PATH + "/logs/" + sdf.format(date) + ".zip").file());
 				}
 				ZipOutputStream zos = new ZipOutputStream(fos);
 				ZipEntry ze = new ZipEntry("latest.log");
 				zos.putNextEntry(ze);
 				FileInputStream in = null;
 				if (Gdx.files.isExternalStorageAvailable()) {
-					in = new FileInputStream(Gdx.files.external(".hidlauncher/" + TITLE + "/logs/latest.log").file());
+					in = new FileInputStream(Gdx.files.external(PATH + "/logs/latest.log").file());
 				} else {
-					in = new FileInputStream(Gdx.files.internal(".hidlauncher/" + TITLE + "/logs/latest.log").file());
+					in = new FileInputStream(Gdx.files.local(PATH + "/logs/latest.log").file());
 				}
 
 				int len;
@@ -150,12 +150,17 @@ public class HardVacuumReloaded extends Game {
 		app42.initialize("5a648eddecc5f7329670a3d435a9daef100f2d62ac937bd2e1bf659b7eee091d", "050720a0c872c6103432575d5e5873b4468a1e9336d48908b1ce831ea6cc8395");
 		app42.buildUserService();
 		app42.buildStorageService();
-		
+		FileHandle fhLauncherProfiles = null;
+		if (Gdx.files.isExternalStorageAvailable()) {
+			fhLauncherProfiles = Gdx.files.external(PATH_LAUNCHER + "/launcher_profiles.json");
+		} else {
+			fhLauncherProfiles = Gdx.files.local(PATH_LAUNCHER + "/launcher_profiles.json");
+		}
 		String uName = "";
 		String pwd = "";
-		if (Gdx.files.external(".hidlauncher/launcher_profiles.json").exists()) {
+		if (fhLauncherProfiles.exists()) {
 			try {
-				JSONObject json = new JSONObject(Gdx.files.external(".hidlauncher/launcher_profiles.json").readString("UTF-8"));
+				JSONObject json = new JSONObject(fhLauncherProfiles.readString("UTF-8"));
 				uName = json.getString("selectedUser");
 				pwd = Base64Coder.decodeString(Gdx.app.getPreferences("HIDLauncher").getString("pass"));
 			} catch (Exception e) {
@@ -202,9 +207,9 @@ public class HardVacuumReloaded extends Game {
 		
 		FileHandle fhPlayerProfile;
 		if (Gdx.files.isExternalStorageAvailable()) {
-			fhPlayerProfile = Gdx.files.external(".hardvacuumreloaded/playerprofile.dat");
+			fhPlayerProfile = Gdx.files.external(PATH + "/playerprofile.dat");
 		} else {
-			fhPlayerProfile = Gdx.files.local(".hardvacuumreloaded/playerprofile.dat");
+			fhPlayerProfile = Gdx.files.local(PATH + "/playerprofile.dat");
 		}
 		if (!fhPlayerProfile.exists()) {
 			playerProfile.saveProfile();
