@@ -28,6 +28,7 @@ import com.badlogic.gdx.utils.I18NBundle;
 public class HardVacuumReloaded extends Game {
 	public static final String TITLE = "Hard Vacuum Reloaded", VERSION = "0.0.1-alpha";
 	public static boolean DEBUG;
+	public static int scale;
 
 	public static I18NBundle langBundle;
 	public static final AssetManager assets = new AssetManager();
@@ -37,8 +38,9 @@ public class HardVacuumReloaded extends Game {
 	public static Engine engine = new Engine();
 	public static App42 app42 = null;
 	
-	public HardVacuumReloaded(App42 app42) {
+	public HardVacuumReloaded(App42 app42, int scale) {
 		HardVacuumReloaded.app42 = app42;
+		HardVacuumReloaded.scale = scale;
 	}
 	
 	/**

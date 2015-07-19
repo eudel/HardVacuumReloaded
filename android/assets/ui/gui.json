@@ -37,6 +37,24 @@
 		},
 		"black64": {
 			"file": "font/black64.fnt"
+		},
+		"white48": {
+			"file": "font/white48.fnt"
+		},
+		"black48": {
+			"file": "font/black48.fnt"
+		},
+		"white40": {
+			"file": "font/white40.fnt"
+		},
+		"black40": {
+			"file": "font/black40.fnt"
+		},
+		"white32": {
+			"file": "font/white32.fnt"
+		},
+		"black32": {
+			"file": "font/black32.fnt"
 		}
 	},
 	"com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
@@ -44,12 +62,64 @@
 			"font": "white64",
 			"fontColor": "white"
 		},
+		"5": {
+			"font": "white64",
+			"fontColor": "white"
+		},
+		"4": {
+			"font": "white48",
+			"fontColor": "white"
+		},
+		"3": {
+			"font": "white40",
+			"fontColor": "white"
+		},
+		"2": {
+			"font": "white32",
+			"fontColor": "white"
+		},
 		"heading.text": {
 			"font": "white64",
 			"fontColor": "white"
 		},
+		"heading.text.5": {
+			"font": "white64",
+			"fontColor": "white"
+		},
+		"heading.text.4": {
+			"font": "white48",
+			"fontColor": "white"
+		},
+		"heading.text.3": {
+			"font": "white40",
+			"fontColor": "white"
+		},
+		"heading.text.2": {
+			"font": "white32",
+			"fontColor": "white"
+		},
 		"heading.buy": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.buy"
+		},
+		"heading.buy.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.buy"
+		},
+		"heading.buy.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.buy"
+		},
+		"heading.buy.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.buy"
+		},
+		"heading.buy.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblHeading.buy"
 		},
@@ -58,8 +128,48 @@
 			"fontColor": "white",
 			"background": "lblMap.buy"
 		},
+		"map.buy.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.buy"
+		},
+		"map.buy.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.buy"
+		},
+		"map.buy.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.buy"
+		},
+		"map.buy.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMap.buy"
+		},
 		"content.buy": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.buy"
+		},
+		"content.buy.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.buy"
+		},
+		"content.buy.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblContent.buy"
+		},
+		"content.buy.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblContent.buy"
+		},
+		"content.buy.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblContent.buy"
 		},
@@ -68,8 +178,48 @@
 			"fontColor": "white",
 			"background": "lblMenu.buy"
 		},
+		"menu.buy.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.buy"
+		},
+		"menu.buy.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.buy"
+		},
+		"menu.buy.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.buy"
+		},
+		"menu.buy.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMenu.buy"
+		},
 		"heading.mission": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.mission"
+		},
+		"heading.mission.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.mission"
+		},
+		"heading.mission.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.mission"
+		},
+		"heading.mission.5": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.mission"
+		},
+		"heading.mission.5": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblHeading.mission"
 		},
@@ -78,8 +228,48 @@
 			"fontColor": "white",
 			"background": "lblMap.mission"
 		},
+		"map.mission.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.mission"
+		},
+		"map.mission.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.mission"
+		},
+		"map.mission.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.mission"
+		},
+		"map.mission.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMap.mission"
+		},
 		"content.mission": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.mission"
+		},
+		"content.mission.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.mission"
+		},
+		"content.mission.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblContent.mission"
+		},
+		"content.mission.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblContent.mission"
+		},
+		"content.mission.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblContent.mission"
 		},
@@ -88,8 +278,48 @@
 			"fontColor": "white",
 			"background": "lblMenu.mission"
 		},
+		"menu.mission.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.mission"
+		},
+		"menu.mission.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.mission"
+		},
+		"menu.mission.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.mission"
+		},
+		"menu.mission.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMenu.mission"
+		},
 		"heading.options": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.options"
+		},
+		"heading.options.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.options"
+		},
+		"heading.options.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.options"
+		},
+		"heading.options.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.options"
+		},
+		"heading.options.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblHeading.options"
 		},
@@ -98,8 +328,48 @@
 			"fontColor": "white",
 			"background": "lblMap.options"
 		},
+		"map.options.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.options"
+		},
+		"map.options.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.options"
+		},
+		"map.options.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.options"
+		},
+		"map.options.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMap.options"
+		},
 		"content.options": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.options"
+		},
+		"content.options.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.options"
+		},
+		"content.options.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblContent.options"
+		},
+		"content.options.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblContent.options"
+		},
+		"content.options.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblContent.options"
 		},
@@ -108,8 +378,48 @@
 			"fontColor": "white",
 			"background": "lblMenu.options"
 		},
+		"menu.options.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.options"
+		},
+		"menu.options.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.options"
+		},
+		"menu.options.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.options"
+		},
+		"menu.options.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMenu.options"
+		},
 		"content.help": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.help"
+		},
+		"content.help.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.help"
+		},
+		"content.help.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblContent.help"
+		},
+		"content.help.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblContent.help"
+		},
+		"content.help.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblContent.help"
 		},
@@ -118,8 +428,48 @@
 			"fontColor": "white",
 			"background": "lblHeading.stats"
 		},
+		"heading.stats.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.stats"
+		},
+		"heading.stats.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.stats"
+		},
+		"heading.stats.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.stats"
+		},
+		"heading.stats.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblHeading.stats"
+		},
 		"map.stats": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.stats"
+		},
+		"map.stats.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.stats"
+		},
+		"map.stats.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.stats"
+		},
+		"map.stats.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.stats"
+		},
+		"map.stats.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMap.stats"
 		},
@@ -128,8 +478,48 @@
 			"fontColor": "white",
 			"background": "lblContent.stats"
 		},
+		"content.stats.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblContent.stats"
+		},
+		"content.stats.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblContent.stats"
+		},
+		"content.stats.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblContent.stats"
+		},
+		"content.stats.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblContent.stats"
+		},
 		"menu.stats": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.stats"
+		},
+		"menu.stats.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.stats"
+		},
+		"menu.stats.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.stats"
+		},
+		"menu.stats.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.stats"
+		},
+		"menu.stats.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMenu.stats"
 		},
@@ -138,8 +528,48 @@
 			"fontColor": "white",
 			"background": "lblHeading.ifc1"
 		},
+		"heading.ifc1.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc1"
+		},
+		"heading.ifc1.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.ifc1"
+		},
+		"heading.ifc1.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.ifc1"
+		},
+		"heading.ifc1.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblHeading.ifc1"
+		},
 		"map.ifc1": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc1"
+		},
+		"map.ifc1.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc1"
+		},
+		"map.ifc1.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.ifc1"
+		},
+		"map.ifc1.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.ifc1"
+		},
+		"map.ifc1.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMap.ifc1"
 		},
@@ -148,8 +578,48 @@
 			"fontColor": "white",
 			"background": "lblMenu.ifc1"
 		},
+		"menu.ifc1.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc1"
+		},
+		"menu.ifc1.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.ifc1"
+		},
+		"menu.ifc1.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.ifc1"
+		},
+		"menu.ifc1.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMenu.ifc1"
+		},
 		"heading.ifc2": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc2"
+		},
+		"heading.ifc2.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc2"
+		},
+		"heading.ifc2.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.ifc2"
+		},
+		"heading.ifc2.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.ifc2"
+		},
+		"heading.ifc2.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblHeading.ifc2"
 		},
@@ -158,8 +628,48 @@
 			"fontColor": "white",
 			"background": "lblMap.ifc2"
 		},
+		"map.ifc2.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc2"
+		},
+		"map.ifc2.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.ifc2"
+		},
+		"map.ifc2.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.ifc2"
+		},
+		"map.ifc2.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMap.ifc2"
+		},
 		"menu.ifc2": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc2"
+		},
+		"menu.ifc2.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc2"
+		},
+		"menu.ifc2.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.ifc2"
+		},
+		"menu.ifc2.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.ifc2"
+		},
+		"menu.ifc2.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMenu.ifc2"
 		},
@@ -168,8 +678,48 @@
 			"fontColor": "white",
 			"background": "lblHeading.ifc3"
 		},
+		"heading.ifc3.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc3"
+		},
+		"heading.ifc3.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.ifc3"
+		},
+		"heading.ifc3.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.ifc3"
+		},
+		"heading.ifc3.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblHeading.ifc3"
+		},
 		"map.ifc3": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc3"
+		},
+		"map.ifc3.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc3"
+		},
+		"map.ifc3.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.ifc3"
+		},
+		"map.ifc3.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.ifc3"
+		},
+		"map.ifc3.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMap.ifc3"
 		},
@@ -178,8 +728,48 @@
 			"fontColor": "white",
 			"background": "lblMenu.ifc3"
 		},
+		"menu.ifc3.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc3"
+		},
+		"menu.ifc3.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.ifc3"
+		},
+		"menu.ifc3.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.ifc3"
+		},
+		"menu.ifc3.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMenu.ifc3"
+		},
 		"heading.ifc4": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc4"
+		},
+		"heading.ifc4.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblHeading.ifc4"
+		},
+		"heading.ifc4.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblHeading.ifc4"
+		},
+		"heading.ifc4.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblHeading.ifc4"
+		},
+		"heading.ifc4.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblHeading.ifc4"
 		},
@@ -188,8 +778,48 @@
 			"fontColor": "white",
 			"background": "lblMap.ifc4"
 		},
+		"map.ifc4.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMap.ifc4"
+		},
+		"map.ifc4.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMap.ifc4"
+		},
+		"map.ifc4.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMap.ifc4"
+		},
+		"map.ifc4.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblMap.ifc4"
+		},
 		"menu.ifc4": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc4"
+		},
+		"menu.ifc4.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblMenu.ifc4"
+		},
+		"menu.ifc4.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblMenu.ifc4"
+		},
+		"menu.ifc4.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblMenu.ifc4"
+		},
+		"menu.ifc4.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblMenu.ifc4"
 		},
@@ -198,8 +828,48 @@
 			"fontColor": "white",
 			"background": "lblBig.up"
 		},
+		"lblBig.up.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblBig.up"
+		},
+		"lblBig.up.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblBig.up"
+		},
+		"lblBig.up.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblBig.up"
+		},
+		"lblBig.up.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblBig.up"
+		},
 		"lblBig.down": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblBig.down"
+		},
+		"lblBig.down.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblBig.down"
+		},
+		"lblBig.down.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblBig.down"
+		},
+		"lblBig.down.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblBig.down"
+		},
+		"lblBig.down.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblBig.down"
 		},
@@ -208,8 +878,48 @@
 			"fontColor": "white",
 			"background": "lblSmall.up"
 		},
+		"lblSmall.up.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblSmall.up"
+		},
+		"lblSmall.up.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblSmall.up"
+		},
+		"lblSmall.up.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblSmall.up"
+		},
+		"lblSmall.up.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblSmall.up"
+		},
 		"lblSmall.down": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblSmall.down"
+		},
+		"lblSmall.down.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblSmall.down"
+		},
+		"lblSmall.down.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblSmall.down"
+		},
+		"lblSmall.down.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblSmall.down"
+		},
+		"lblSmall.down.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblSmall.down"
 		},
@@ -218,8 +928,48 @@
 			"fontColor": "white",
 			"background": "lblClass"
 		},
+		"lblClass.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblClass"
+		},
+		"lblClass.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblClass"
+		},
+		"lblClass.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblClass"
+		},
+		"lblClass.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblClass"
+		},
 		"lblEmployer": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblEmployer"
+		},
+		"lblEmployer.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblEmployer"
+		},
+		"lblEmployer.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblEmployer"
+		},
+		"lblEmployer.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblEmployer"
+		},
+		"lblEmployer.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblEmployer"
 		},
@@ -228,8 +978,48 @@
 			"fontColor": "white",
 			"background": "lblObjective"
 		},
+		"lblObjective.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblObjective"
+		},
+		"lblObjective.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblObjective"
+		},
+		"lblObjective.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblObjective"
+		},
+		"lblObjective.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "lblObjective"
+		},
 		"lblPayment": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "lblPayment"
+		},
+		"lblPayment.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "lblPayment"
+		},
+		"lblPayment.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "lblPayment"
+		},
+		"lblPayment.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "lblPayment"
+		},
+		"lblPayment.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "lblPayment"
 		},
@@ -238,8 +1028,48 @@
 			"fontColor": "white",
 			"background": "field1.red"
 		},
+		"field1.red.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field1.red"
+		},
+		"field1.red.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field1.red"
+		},
+		"field1.red.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field1.red"
+		},
+		"field1.red.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "field1.red"
+		},
 		"field2.red": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.red"
+		},
+		"field2.red.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.red"
+		},
+		"field2.red.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field2.red"
+		},
+		"field2.red.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field2.red"
+		},
+		"field2.red.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "field2.red"
 		},
@@ -248,8 +1078,48 @@
 			"fontColor": "white",
 			"background": "field3.red"
 		},
+		"field3.red.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field3.red"
+		},
+		"field3.red.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field3.red"
+		},
+		"field3.red.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field3.red"
+		},
+		"field3.red.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "field3.red"
+		},
 		"field4.red": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.red"
+		},
+		"field4.red.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.red"
+		},
+		"field4.red.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field4.red"
+		},
+		"field4.red.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field4.red"
+		},
+		"field4.red.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "field4.red"
 		},
@@ -258,8 +1128,48 @@
 			"fontColor": "white",
 			"background": "field1.black"
 		},
+		"field1.black.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field1.black"
+		},
+		"field1.black.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field1.black"
+		},
+		"field1.black.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field1.black"
+		},
+		"field1.black.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "field1.black"
+		},
 		"field2.black": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.black"
+		},
+		"field2.black.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field2.black"
+		},
+		"field2.black.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field2.black"
+		},
+		"field2.black.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field2.black"
+		},
+		"field2.black.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "field2.black"
 		},
@@ -268,8 +1178,48 @@
 			"fontColor": "white",
 			"background": "field3.black"
 		},
+		"field3.black.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field3.black"
+		},
+		"field3.black.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field3.black"
+		},
+		"field3.black.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field3.black"
+		},
+		"field3.black.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "field3.black"
+		},
 		"field4.black": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.black"
+		},
+		"field4.black.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "field4.black"
+		},
+		"field4.black.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "field4.black"
+		},
+		"field4.black.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "field4.black"
+		},
+		"field4.black.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "field4.black"
 		},
@@ -278,8 +1228,48 @@
 			"fontColor": "white",
 			"background": "menu.airstrike.up"
 		},
+		"btn.menu.airstrike.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.airstrike.up"
+		},
+		"btn.menu.airstrike.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.airstrike.up"
+		},
+		"btn.menu.airstrike.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.airstrike.up"
+		},
+		"btn.menu.airstrike.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "menu.airstrike.up"
+		},
 		"btn.menu.buy": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.buy.up"
+		},
+		"btn.menu.buy.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.buy.up"
+		},
+		"btn.menu.buy.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.buy.up"
+		},
+		"btn.menu.buy.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.buy.up"
+		},
+		"btn.menu.buy.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "menu.buy.up"
 		},
@@ -288,8 +1278,48 @@
 			"fontColor": "white",
 			"background": "menu.disc.up"
 		},
+		"btn.menu.disc.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.disc.up"
+		},
+		"btn.menu.disc.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.disc.up"
+		},
+		"btn.menu.disc.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.disc.up"
+		},
+		"btn.menu.disc.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "menu.disc.up"
+		},
 		"btn.menu.grab": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.grab.up"
+		},
+		"btn.menu.grab.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.grab.up"
+		},
+		"btn.menu.grab.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.grab.up"
+		},
+		"btn.menu.grab.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.grab.up"
+		},
+		"btn.menu.grab.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "menu.grab.up"
 		},
@@ -298,8 +1328,48 @@
 			"fontColor": "white",
 			"background": "menu.help.up"
 		},
+		"btn.menu.help.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.help.up"
+		},
+		"btn.menu.help.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.help.up"
+		},
+		"btn.menu.help.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.help.up"
+		},
+		"btn.menu.help.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "menu.help.up"
+		},
 		"btn.menu.info": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.info.up"
+		},
+		"btn.menu.info.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.info.up"
+		},
+		"btn.menu.info.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.info.up"
+		},
+		"btn.menu.info.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.info.up"
+		},
+		"btn.menu.info.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "menu.info.up"
 		},
@@ -308,8 +1378,48 @@
 			"fontColor": "white",
 			"background": "menu.map.up"
 		},
+		"btn.menu.map.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.map.up"
+		},
+		"btn.menu.map.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.map.up"
+		},
+		"btn.menu.map.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.map.up"
+		},
+		"btn.menu.map.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "menu.map.up"
+		},
 		"btn.menu.options": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.options.up"
+		},
+		"btn.menu.options.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.options.up"
+		},
+		"btn.menu.options.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.options.up"
+		},
+		"btn.menu.options.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.options.up"
+		},
+		"btn.menu.options.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "menu.options.up"
 		},
@@ -318,8 +1428,48 @@
 			"fontColor": "white",
 			"background": "menu.selectGroup.up"
 		},
+		"btn.menu.selectGroup.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.selectGroup.up"
+		},
+		"btn.menu.selectGroup.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.selectGroup.up"
+		},
+		"btn.menu.selectGroup.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.selectGroup.up"
+		},
+		"btn.menu.selectGroup.2": {
+			"font": "white32",
+			"fontColor": "white",
+			"background": "menu.selectGroup.up"
+		},
 		"btn.menu.stats": {
 			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.stats.up"
+		},
+		"btn.menu.stats.5": {
+			"font": "white64",
+			"fontColor": "white",
+			"background": "menu.stats.up"
+		},
+		"btn.menu.stats.4": {
+			"font": "white48",
+			"fontColor": "white",
+			"background": "menu.stats.up"
+		},
+		"btn.menu.stats.3": {
+			"font": "white40",
+			"fontColor": "white",
+			"background": "menu.stats.up"
+		},
+		"btn.menu.stats.2": {
+			"font": "white32",
 			"fontColor": "white",
 			"background": "menu.stats.up"
 		}
@@ -558,6 +1708,30 @@
 			"fontColorSelected": "white",
 			"fontColorUnselected": "white",
 			"selection": "default.selection"
+		},
+		"5": {
+			"font": "white64",
+			"fontColorSelected": "white",
+			"fontColorUnselected": "white",
+			"selection": "default.selection"
+		},
+		"4": {
+			"font": "white48",
+			"fontColorSelected": "white",
+			"fontColorUnselected": "white",
+			"selection": "default.selection"
+		},
+		"3": {
+			"font": "white40",
+			"fontColorSelected": "white",
+			"fontColorUnselected": "white",
+			"selection": "default.selection"
+		},
+		"2": {
+			"font": "white32",
+			"fontColorSelected": "white",
+			"fontColorUnselected": "white",
+			"selection": "default.selection"
 		}
 	},
 	"com.badlogic.gdx.scenes.scene2d.ui.Window$WindowStyle": {
@@ -566,9 +1740,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"dialogSmall.5": {
+    		"background": "dialogSmall",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"dialogSmall.4": {
+    		"background": "dialogSmall",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"dialogSmall.3": {
+    		"background": "dialogSmall",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"dialogSmall.2": {
+    		"background": "dialogSmall",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"dialogBig": {
     		"stageBackground": "dialogBig",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"dialogBig.5": {
+    		"stageBackground": "dialogBig",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"dialogBig.4": {
+    		"stageBackground": "dialogBig",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"dialogBig.3": {
+    		"stageBackground": "dialogBig",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"dialogBig.2": {
+    		"stageBackground": "dialogBig",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field1": {
@@ -576,9 +1790,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field1.5": {
+    		"background": "field1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.4": {
+    		"background": "field1",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field1.3": {
+    		"background": "field1",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field1.2": {
+    		"background": "field1",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field1.red1": {
     		"background": "field1.red1",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.red1.5": {
+    		"background": "field1.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.red1.4": {
+    		"background": "field1.red1",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field1.red1.3": {
+    		"background": "field1.red1",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field1.red1.2": {
+    		"background": "field1.red1",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field1.red2": {
@@ -586,9 +1840,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field1.red2.5": {
+    		"background": "field1.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.red2.4": {
+    		"background": "field1.red2",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field1.red2.3": {
+    		"background": "field1.red2",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field1.red2.2": {
+    		"background": "field1.red2",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field1.red12": {
     		"background": "field1.red12",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.red12.5": {
+    		"background": "field1.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field1.red12.4": {
+    		"background": "field1.red12",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field1.red12.3": {
+    		"background": "field1.red12",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field1.red12.2": {
+    		"background": "field1.red12",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field2": {
@@ -596,9 +1890,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field2.5": {
+    		"background": "field2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.4": {
+    		"background": "field2",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field2.3": {
+    		"background": "field2",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field2.2": {
+    		"background": "field2",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field2.red1": {
     		"background": "field2.red1",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.red1.5": {
+    		"background": "field2.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.red1.4": {
+    		"background": "field2.red1",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field2.red1.3": {
+    		"background": "field2.red1",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field2.red1.2": {
+    		"background": "field2.red1",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field2.red2": {
@@ -606,9 +1940,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field2.red2.5": {
+    		"background": "field2.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.red2.4": {
+    		"background": "field2.red2",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field2.red2.3": {
+    		"background": "field2.red2",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field2.red2.2": {
+    		"background": "field2.red2",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field2.red12": {
     		"background": "field2.red12",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.red12.5": {
+    		"background": "field2.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field2.red12.4": {
+    		"background": "field2.red12",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field2.red12.3": {
+    		"background": "field2.red12",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field2.red12.2": {
+    		"background": "field2.red12",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field3": {
@@ -616,9 +1990,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field3.5": {
+    		"background": "field3",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.4": {
+    		"background": "field3",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field3.3": {
+    		"background": "field3",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field3.2": {
+    		"background": "field3",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field3.red1": {
     		"background": "field3.red1",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.red1.5": {
+    		"background": "field3.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.red1.4": {
+    		"background": "field3.red1",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field3.red1.3": {
+    		"background": "field3.red1",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field3.red1.2": {
+    		"background": "field3.red1",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field3.red2": {
@@ -626,9 +2040,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field3.red2.5": {
+    		"background": "field3.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.red2.4": {
+    		"background": "field3.red2",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field3.red2.3": {
+    		"background": "field3.red2",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field3.red2.2": {
+    		"background": "field3.red2",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field3.red12": {
     		"background": "field3.red12",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.red12.5": {
+    		"background": "field3.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field3.red12.4": {
+    		"background": "field3.red12",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field3.red12.3": {
+    		"background": "field3.red12",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field3.red12.2": {
+    		"background": "field3.red12",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field4": {
@@ -636,9 +2090,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field4.5": {
+    		"background": "field4",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.4": {
+    		"background": "field4",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field4.3": {
+    		"background": "field4",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field4.2": {
+    		"background": "field4",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field4.red1": {
     		"background": "field4.red1",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.red1.5": {
+    		"background": "field4.red1",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.red1.4": {
+    		"background": "field4.red1",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field4.red1.3": {
+    		"background": "field4.red1",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field4.red1.2": {
+    		"background": "field4.red1",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	},
     	"field4.red2": {
@@ -646,9 +2140,49 @@
     		"titleFont": "white64",
     		"titleFontColor": "white"
     	},
+		"field4.red2.5": {
+    		"background": "field4.red2",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.red2.4": {
+    		"background": "field4.red2",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field4.red2.3": {
+    		"background": "field4.red2",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field4.red2.2": {
+    		"background": "field4.red2",
+    		"titleFont": "white32",
+    		"titleFontColor": "white"
+    	},
     	"field4.red12": {
     		"background": "field4.red12",
     		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.red12.5": {
+    		"background": "field4.red12",
+    		"titleFont": "white64",
+    		"titleFontColor": "white"
+    	},
+		"field4.red12.4": {
+    		"background": "field4.red12",
+    		"titleFont": "white48",
+    		"titleFontColor": "white"
+    	},
+		"field4.red12.3": {
+    		"background": "field4.red12",
+    		"titleFont": "white40",
+    		"titleFontColor": "white"
+    	},
+		"field4.red12.2": {
+    		"background": "field4.red12",
+    		"titleFont": "white32",
     		"titleFontColor": "white"
     	}
     },

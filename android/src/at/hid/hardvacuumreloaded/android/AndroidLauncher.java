@@ -14,6 +14,6 @@ public class AndroidLauncher extends AndroidApplication {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		config.useWakelock = true;
-		initialize(new HardVacuumReloaded(new AndroidApp42()), config);
+		initialize(new HardVacuumReloaded(new AndroidApp42(), 5), config);
 	}
 }
